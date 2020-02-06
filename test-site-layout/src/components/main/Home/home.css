@@ -1,0 +1,9 @@
+.home {
+    width: 100vw;
+    min-height: 779px;
+    height: auto;
+    background-image: url('../../../media/img/Web-Development-Project.jpg');
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-size: cover;
+}

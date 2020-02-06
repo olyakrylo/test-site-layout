@@ -1,0 +1,44 @@
+.header {
+    position: fixed;
+    width: 100%;
+    min-height: 70px;
+    height: 12vh;
+    background-color: white;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 17px;
+}
+
+.header > p {
+    font-weight: bold;
+    margin-left: 5vw;
+    font-size: 1.5rem;
+}
+
+.header > ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    list-style: none;
+    margin-right: 5vw;
+}
+
+.header > ul > li {
+    margin-right: 35px;
+    font-weight: bolder;
+}
+
+.header > ul > li:hover {
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+@media (max-width: 950px) {
+    .header > ul {display: none}
+    .header > p {font-size: 10px}
+}
