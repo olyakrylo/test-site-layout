@@ -33,13 +33,16 @@ export default class Header extends React.Component {
         
     }
 
-    setMenuIcon() {
-        let menu = document.getElementById('menu');
-        return menu.classList.contains('header__menu_show')
+    searchButtonClicked() {
+        let button = document.getElementById('search')
+        if (button.classList.contains('header__search_hidden')) {
+            button.classList.remove('header__search_hidden')
+        } else {
+            // search
+        }
     }
 
     render() {
-        // let icon = document.getElementById('menu').contains('header__menu_show') ? faBars : faTimes
 
         return(
             <div className='header' id='header'>
@@ -64,7 +67,12 @@ export default class Header extends React.Component {
                     <li>Blog</li>
                     <li>Contact us</li> 
                     <li>
-                        <FontAwesomeIcon icon={faSearch} />
+                        <input 
+                            id='search'
+                            type='text'
+                            className='header__search header__search_hidden'
+                            placeholder='Search here...'></input>
+                        <FontAwesomeIcon icon={faSearch} onClick={() => this.searchButtonClicked()}/>
                     </li>
                 </ul>
             </div>

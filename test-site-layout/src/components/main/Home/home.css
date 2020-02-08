@@ -58,11 +58,14 @@
     font-weight: 600;
     color: white;
     letter-spacing: 1pt;
+
+    transition: 500ms;
 }
 
 .home__buttons > :nth-child(1) {
     background-color: transparent;
     border: 2px solid white;
+    outline: none;
 }
 
 .home__buttons > :nth-child(1):hover {
@@ -70,6 +73,8 @@
     background-color: white;
     color: black;
 }
+
+
 
 .home__buttons > :nth-child(2) {
     background-color: #00897b;
