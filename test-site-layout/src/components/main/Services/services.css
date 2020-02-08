@@ -69,8 +69,11 @@
     border-color: inherit;
 }
 
-.services__content > li:hover {
+.services__content > li > button:hover {
     cursor: pointer;
+}
+
+.services__content > li:hover {
     background-color: #00897b;
     color: white;
     box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.25);

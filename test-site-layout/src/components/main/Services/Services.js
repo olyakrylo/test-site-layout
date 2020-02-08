@@ -18,7 +18,7 @@ export default class aboutUs extends React.Component {
         let infoText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
         // let blockText = 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.'
         return(
-            <div className='services'>
+            <div className='services' id='services'>
                 <div className='services__info'>
                     <h2>Our Services</h2>
                     <p>{infoText}</p>

@@ -5,8 +5,11 @@ export default class aboutUs extends React.Component {
     render() {
         let infoText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
         let blockText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor'
+
+        // document.getElementById('about')
+
         return(
-            <div className='aboutUs'>
+            <div className='aboutUs' id='about'>
                 <div className='aboutUs__info'>
                     <h2>About Us</h2>
                     <p>{infoText}</p>
