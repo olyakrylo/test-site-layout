@@ -23,7 +23,7 @@ code {
   font-family: 'Open Sans';
   src: url('./media/fonts/OpenSans-SemiBold.ttf') format('truetype');
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 @font-face {
@@ -33,9 +33,3 @@ code {
   font-weight: bold;
 }
 
-/* @font-face {
-  font-family: 'Oprn Sans';
-  src: url('./media/fonts/OpenSans-SemiBold.ttf') format('ttf');
-  font-style: normal;
-  font-weight: bolder;
-} */

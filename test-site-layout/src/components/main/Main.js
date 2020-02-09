@@ -1,8 +1,8 @@
 import React from 'react'
-import './main.css'
+import '../../css/style.css'
 import Header from './Header/Header'
 import Home from './Home/Home'
-import AboutUs from './AboutUs/AboutUs'
+import About from './About/About'
 import Services from './Services/Services'
 
 export default class Main extends React.Component {
@@ -11,7 +11,7 @@ export default class Main extends React.Component {
             <div className='main-container'>
                 <Header />
                 <Home />
-                <AboutUs />
+                <About />
                 <Services />
             </div>
         )

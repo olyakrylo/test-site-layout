@@ -1,5 +1,5 @@
 import React from 'react'
-import './services.css'
+import '../../../css/style.css'
 
 export default class aboutUs extends React.Component {
     serviceListElement(title) {

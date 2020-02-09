@@ -1,5 +1,5 @@
 import React from 'react'
-import './header.css'
+import '../../../css/style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 
@@ -9,22 +9,22 @@ export default class Header extends React.Component {
         let menu = document.getElementById('menu');
         let crossItem = document.getElementById('cross');
         let burgerItem = document.getElementById('burger');
-        let showClass = 'header__bar';
-        let hiddenClass = 'header__bar_hidden';
-        if (menu.classList.contains('header__menu_show')) {
-            menu.classList.remove('header__menu_show')
+        let menuShowClass = 'header__menu_show';
+        let barHiddenClass = 'header__bar_hidden';
+        
+        if (menu.classList.contains(menuShowClass)) {
+            menu.classList.remove(menuShowClass)
 
-            crossItem.classList.replace(showClass, hiddenClass)
-            burgerItem.classList.replace(hiddenClass, showClass)
+            burgerItem.classList.remove(barHiddenClass);
+            crossItem.classList.add(barHiddenClass);
         } else {
-            menu.classList.add('header__menu_show');
-            menu.classList.add('animated', 'slideInDown')
+            menu.classList.add(menuShowClass);
 
-            crossItem.classList.replace(hiddenClass, showClass)
-            burgerItem.classList.replace(showClass, hiddenClass)
+            crossItem.classList.remove(barHiddenClass);
+            burgerItem.classList.add(barHiddenClass);
 
-            burgerItem.classList.add('animated', 'fadeIn')
-            crossItem.classList.add('animated', 'fadeIn')
+            // document.getElementById('header').classList.add('header__open')
+            // setTimeout(document.getElementById('header').classList.remove('header__open'), 100)
         }
         
     }
@@ -40,12 +40,15 @@ export default class Header extends React.Component {
 
     scrollToItem = e => {
         e.preventDefault();
-        // let elemId = e.currentTarget.id.toLowerCase();
         let elemId = e.currentTarget.id.substring(5)
         let elem = document.getElementById(elemId);
         elem.scrollIntoView();
 
-        this.openOrCloseMenu()
+        elem.classList.add('animated', 'slideInUp');
+
+        setTimeout(() => elem.classList.remove('animated', 'slideInUp'), 1000)
+
+        this.openOrCloseMenu();
     }
 
     render() {
@@ -55,16 +58,16 @@ export default class Header extends React.Component {
                     <p>Your Logo</p>
                     <FontAwesomeIcon 
                         id='burger' 
-                        className='header__bar'
+                        className='header__bar animated fadeIn'
                         icon={faBars} 
                         onClick={() => this.openOrCloseMenu()} />
                     <FontAwesomeIcon 
                         id='cross' 
-                        className='header__bar_hidden' 
+                        className='header__bar header__bar_hidden animated fadeIn' 
                         icon={faTimes} 
                         onClick={() => this.openOrCloseMenu()} />
                 </div>
-                <ul className='header__menu' id='menu' >
+                <ul className='header__menu animated fadeInDown' id='menu' >
                     <li id='menu-home' onClick={this.scrollToItem}>Home</li>
                     <li id='menu-about' onClick={this.scrollToItem}>About</li>
                     <li id='menu-services' onClick={this.scrollToItem}>Servicing</li>

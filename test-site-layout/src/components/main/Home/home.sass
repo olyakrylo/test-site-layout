@@ -1,0 +1,88 @@
+@import '../../../sass/variables'
+@import '../../../sass/mixins'
+@import 'home-mixins'
+
+.home 
+    display: flex
+    width: 100%
+    height: auto
+    background-image: url('../media/img/Web-Development-Project.jpg')
+    background-position: center
+    background-size: cover
+    justify-content: center
+    align-content: center
+    flex-direction: column
+
+.home__content 
+    max-width: 80%
+    align-self: center
+    margin-top: 25vh
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+
+    h1 
+        @include font (60px, $semibold, white, $letterS: 3pt)
+        max-width: 90vw
+        margin-bottom: 0
+
+    h4 
+        @include font (20px, normal, white, $letterS: 1pt)
+        margin-top: 15px
+    
+.home__buttons 
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    margin-top: 10vh
+
+    button 
+        @include font (20px, $semibold, $letterS: 1pt)
+        display: flex
+        width: 220px
+        max-width: 50vw
+        height: 70px
+        max-height: 20vw
+        margin: 12.5px
+        justify-content: center
+        outline: none
+        transition: 500ms
+
+        &:hover
+            cursor: pointer
+
+    :nth-child(1) 
+        @include homeButton(transparent, white, 2px solid white, 2px solid white, white, black)
+
+    :nth-child(2)
+        @include homeButton($seaGreen, transparent, none, 2px solid $seaGreen, white, $seaGreen)
+
+.home__angle 
+    margin-top: 5vh
+    font-size: 4vh
+    margin-bottom: 5vh
+    transition-duration: 300ms
+    padding: 30px
+    border-radius: 50%
+    color: white
+
+    &:hover
+        cursor: pointer
+        transform: scale(1.3)
+        transition-duration: 300ms
+
+@media (max-width: 950px) 
+    .home__content 
+        margin-top: 20vh
+
+        h1 
+            font-size: 35px 
+            letter-spacing: 1pt
+
+    .home__content > h4, .home__buttons > button 
+        font-size: 14px
+
+    .home__angle 
+        margin-top: 8vh
+        margin-bottom: 6vh
