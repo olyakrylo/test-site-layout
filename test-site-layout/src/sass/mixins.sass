@@ -4,3 +4,29 @@
     color: $color
     letter-spacing: $letterS
     font-family: 'Open Sans', sans-serif
+
+@mixin bigDescr ($fontColor: #000)
+    max-width: 700px
+    text-align: center
+    justify-self: center
+    
+    h2
+        margin-top: 0
+        @include font (25px, bold, $fontColor, $letterS: 0.5px)
+    p
+        @include font (15px, normal, $fontColor, $letterS: 0.3px)
+
+@mixin smallDescr ($fontColor: #000)
+    text-align: center
+    justify-self: center
+
+    h3
+        @include font (17px, bold, $fontColor, $letterS: 0.4px)
+        margin: 5px 0 15px 0
+    p
+        @include font (13px, normal, $fontColor)
+        margin-bottom: 0
+        margin-top: 0
+
+
+    

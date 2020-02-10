@@ -1,7 +1,9 @@
 import React from 'react'
-import '../../../css/style.css'
+import '../../css/style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+
+import { Link } from "react-router-dom"
 
 export default class Header extends React.Component {
 
@@ -22,9 +24,6 @@ export default class Header extends React.Component {
 
             crossItem.classList.remove(barHiddenClass);
             burgerItem.classList.add(barHiddenClass);
-
-            // document.getElementById('header').classList.add('header__open')
-            // setTimeout(document.getElementById('header').classList.remove('header__open'), 100)
         }
         
     }
@@ -39,16 +38,27 @@ export default class Header extends React.Component {
     }
 
     scrollToItem = e => {
+
         e.preventDefault();
         let elemId = e.currentTarget.id.substring(5)
-        let elem = document.getElementById(elemId);
-        elem.scrollIntoView();
-
-        elem.classList.add('animated', 'slideInUp');
-
-        setTimeout(() => elem.classList.remove('animated', 'slideInUp'), 1000)
+            
+        try {
+            let elem = document.getElementById(elemId);
+            elem.scrollIntoView({behavior: "smooth", block: "start"});
+        } catch (err) {
+            console.log(err)
+        }
 
         this.openOrCloseMenu();
+    }
+
+    menuItem(name, id, linkTo, clickFunc, cannotHide) {
+        let itemClass = document.location.pathname === linkTo || cannotHide ? '' : 'header__menu_item_hidden'
+        return (
+            <li id={id} className={itemClass} onClick={clickFunc}>
+                <Link to={linkTo} className='header__link'>{name}</Link>
+            </li>
+        )
     }
 
     render() {
@@ -68,12 +78,12 @@ export default class Header extends React.Component {
                         onClick={() => this.openOrCloseMenu()} />
                 </div>
                 <ul className='header__menu animated fadeInDown' id='menu' >
-                    <li id='menu-home' onClick={this.scrollToItem}>Home</li>
-                    <li id='menu-about' onClick={this.scrollToItem}>About</li>
-                    <li id='menu-services' onClick={this.scrollToItem}>Servicing</li>
+                    {this.menuItem('Home', 'menu-home', '/home', this.scrollToItem, true)}
+                    {this.menuItem('About', 'menu-about', '/home', this.scrollToItem, false)}
+                    {this.menuItem('Servicing', 'menu-services', '/home', this.scrollToItem, false)}
                     <li>Portfolio</li>
                     <li>Blog</li>
-                    <li>Contact us</li> 
+                    {this.menuItem('Contacts', 'menu-contacts', '/contacts', this.openOrCloseMenu, true)}
                     <li>
                         <input 
                             id='search'

@@ -1,5 +1,5 @@
-@import '../../../sass/variables'
-@import '../../../sass/mixins'
+@import '../../sass/variables'
+@import '../../sass/mixins'
     
 .header
     position: fixed
@@ -13,7 +13,7 @@
     align-items: center
     justify-content: space-between
 
-    @include font (15px, $semibold, black, 1px)
+    @include font (17px, $semibold, black, 1px)
     
     z-index: 2
 
@@ -46,6 +46,18 @@
         &:hover
             color: $seaGreen
             cursor: pointer
+
+    .header__link
+        color: black
+        text-decoration: none
+        transition: 300ms
+
+        &:hover
+            color: $seaGreen
+            cursor: pointer
+
+.header__menu_item_hidden
+    display: none
 
 .header__search
     @include font (15px, 100, black)

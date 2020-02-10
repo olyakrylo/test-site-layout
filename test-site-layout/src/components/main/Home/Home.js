@@ -7,15 +7,12 @@ export default class Home extends React.Component {
     scrollToAbout() {
         let about = document.getElementById('about')
 
-        about.scrollIntoView()
-
-        about.classList.add('animated', 'slideInUp');
-        setTimeout(() => about.classList.remove('animated', 'slideInUp'), 1000)
+        about.scrollIntoView({behavior: "smooth"})
     }
 
     render() {
         return (
-            <div className='home animated slideInDown' id='home'>
+            <div className='home' id='home'>
                 <div className="home__content">
                     <h1>Web development project</h1>
                     <h4>Very suitable to support all web development projects</h4>

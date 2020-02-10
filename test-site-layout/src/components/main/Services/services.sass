@@ -11,12 +11,8 @@
 .services__info
     grid-column: 2 / 10
     grid-row: 2 / 3
-    max-width: 700px
-    text-align: center
-    justify-self: center
-
-    > p
-        @include font (15px, normal, $letterS: 0.5px)
+    @include bigDescr
+    
 
 .services__content 
     grid-column: 2 / 10
@@ -37,25 +33,23 @@
 
     > li
         background-color: white
-        padding: 40px
+        padding: 50px
         display: flex
         flex-direction: column
         align-items: center
         justify-content: center
         transition: 500ms
+        @include smallDescr (inherit)
+
         &:hover
             background-color: $seaGreen
             color: white
             box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.25)
             border-color: white
 
-        > p
-            @include font (13px, normal, inherit)
-            margin-top: 0
-
         > button
             @include font (17px, bold, inherit)
-            margin-top: 20px
+            margin-top: 50px
             min-height: 50px
             width: auto
             padding: 0 15px

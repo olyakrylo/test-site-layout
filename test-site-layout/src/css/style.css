@@ -3,6 +3,11 @@
   height: auto;
 }
 
+.contacts-container {
+  width: 100%;
+  height: auto;
+}
+
 .home {
   display: flex;
   width: 100%;
@@ -145,7 +150,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 500;
   color: black;
   letter-spacing: 1px;
@@ -187,6 +192,19 @@
 .header__menu li:hover {
   color: #00897b;
   cursor: pointer;
+}
+.header__menu .header__link {
+  color: black;
+  text-decoration: none;
+  transition: 300ms;
+}
+.header__menu .header__link:hover {
+  color: #00897b;
+  cursor: pointer;
+}
+
+.header__menu_item_hidden {
+  display: none;
 }
 
 .header__search {
@@ -261,11 +279,19 @@
   text-align: center;
   justify-self: center;
 }
+.about__info h2 {
+  margin-top: 0;
+  font-size: 25px;
+  font-weight: bold;
+  color: #000;
+  letter-spacing: 0.5px;
+  font-family: "Open Sans", sans-serif;
+}
 .about__info p {
   font-size: 15px;
   font-weight: normal;
   color: #000;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -286,6 +312,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  justify-self: center;
+}
+.about__content li h3 {
+  font-size: 17px;
+  font-weight: bold;
+  color: #000;
+  letter-spacing: 0.4px;
+  font-family: "Open Sans", sans-serif;
+  margin: 5px 0 15px 0;
 }
 .about__content li p {
   font-size: 13px;
@@ -294,9 +330,7 @@
   letter-spacing: 0px;
   font-family: "Open Sans", sans-serif;
   margin-bottom: 0;
-}
-.about__content li h3 {
-  margin: 5px 0 4px 0;
+  margin-top: 0;
 }
 
 .about__img {
@@ -334,11 +368,19 @@
   text-align: center;
   justify-self: center;
 }
-.services__info > p {
+.services__info h2 {
+  margin-top: 0;
+  font-size: 25px;
+  font-weight: bold;
+  color: #000;
+  letter-spacing: 0.5px;
+  font-family: "Open Sans", sans-serif;
+}
+.services__info p {
   font-size: 15px;
   font-weight: normal;
   color: #000;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -361,12 +403,31 @@
 }
 .services__content > li {
   background-color: white;
-  padding: 40px;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: 500ms;
+  text-align: center;
+  justify-self: center;
+}
+.services__content > li h3 {
+  font-size: 17px;
+  font-weight: bold;
+  color: inherit;
+  letter-spacing: 0.4px;
+  font-family: "Open Sans", sans-serif;
+  margin: 5px 0 15px 0;
+}
+.services__content > li p {
+  font-size: 13px;
+  font-weight: normal;
+  color: inherit;
+  letter-spacing: 0px;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 .services__content > li:hover {
   background-color: #00897b;
@@ -374,21 +435,13 @@
   box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.25);
   border-color: white;
 }
-.services__content > li > p {
-  font-size: 13px;
-  font-weight: normal;
-  color: inherit;
-  letter-spacing: 0px;
-  font-family: "Open Sans", sans-serif;
-  margin-top: 0;
-}
 .services__content > li > button {
   font-size: 17px;
   font-weight: bold;
   color: inherit;
   letter-spacing: 0px;
   font-family: "Open Sans", sans-serif;
-  margin-top: 20px;
+  margin-top: 50px;
   min-height: 50px;
   width: auto;
   padding: 0 15px;
@@ -408,4 +461,147 @@
   height: 80px;
   transform: translateX(15px);
   z-index: 1;
+}
+
+.team {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 30px repeat(6, minmax(80px, -webkit-max-content));
+  grid-template-rows: 30px repeat(6, minmax(80px, max-content));
+}
+
+.team__info {
+  grid-column: 2/10;
+  grid-row: 3/4;
+  max-width: 700px;
+  text-align: center;
+  justify-self: center;
+}
+.team__info h2 {
+  margin-top: 0;
+  font-size: 25px;
+  font-weight: bold;
+  color: #000;
+  letter-spacing: 0.5px;
+  font-family: "Open Sans", sans-serif;
+}
+.team__info p {
+  font-size: 15px;
+  font-weight: normal;
+  color: #000;
+  letter-spacing: 0.3px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.team__content {
+  grid-column: 2/10;
+  grid-row: 5/6;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.team__content .team__person-about {
+  width: 30%;
+  min-width: 250px;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.team__content .team__person-about:nth-child(2) {
+  margin: 0 10px;
+}
+@media (max-width: 500px) {
+  .team__content .team__person-about {
+    width: 100%;
+  }
+  .team__content .team__person-about:nth-child(2) {
+    margin: 50px 0;
+  }
+}
+.team__content .team__person-about img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.team__content .team__person-about .team__person-info {
+  text-align: center;
+  justify-self: center;
+}
+.team__content .team__person-about .team__person-info h3 {
+  font-size: 17px;
+  font-weight: bold;
+  color: #000;
+  letter-spacing: 0.4px;
+  font-family: "Open Sans", sans-serif;
+  margin: 5px 0 15px 0;
+}
+.team__content .team__person-about .team__person-info p {
+  font-size: 13px;
+  font-weight: normal;
+  color: #000;
+  letter-spacing: 0px;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.team__content .team__person-about .team__person-info h3 {
+  margin: 20px 0 8px 0;
+}
+.team__content .team__person-about .team__person-socials {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+.team__content .team__person-about .team__person-socials > a {
+  width: 45px;
+  height: 45px;
+  background-color: #f0f1f1;
+  border-radius: 10px;
+  font-size: 25px;
+  color: #00897b;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 300ms;
+}
+@media (max-width: 500px) {
+  .team__content .team__person-about .team__person-socials > a {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+  }
+}
+.team__content .team__person-about .team__person-socials > a:hover {
+  color: #ffffff;
+  background-color: #3949ab;
+}
+
+.team__content_hidden {
+  display: none;
+}
+
+.team__switcher {
+  grid-column: 5/7;
+  grid-row: 6/7;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.team__switcher circle {
+  fill: #00897b;
+}
+@media (min-width: 500px) {
+  .team__switcher circle:hover {
+    cursor: pointer;
+    fill: #007064;
+  }
+}
+.team__switcher .team__switcher_circle_active {
+  fill: #3949ab;
 }
