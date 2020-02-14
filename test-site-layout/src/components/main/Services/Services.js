@@ -1,22 +1,11 @@
 import React from 'react'
 import '../../../css/style.css'
+import ListElement from './ListElement/ListElement'
 
-export default class aboutUs extends React.Component {
-    serviceListElement(title) {
-        let blockText = 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.'
-        return (
-            <li>
-                <div className='service__item'></div>
-                <h3>{title}</h3>
-                <p>{blockText}</p>
-                <button>READ MORE</button>
-            </li>
-        )
-    } 
-
+export default class Services extends React.Component {
     render() {
         let infoText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
-        // let blockText = 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.'
+        let blockText = 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.'
         return(
             <div className='services' id='services'>
                 <div className='services__info'>
@@ -25,12 +14,12 @@ export default class aboutUs extends React.Component {
                 </div>
 
                 <ul className='services__content'>
-                    {this.serviceListElement('Research')}
-                    {this.serviceListElement('Portfolio')}
-                    {this.serviceListElement('Support')}
-                    {this.serviceListElement('Documentation')}
-                    {this.serviceListElement('Development')}
-                    {this.serviceListElement('Design')}
+                    <ListElement title='Research' text={blockText} />
+                    <ListElement title='Portfolio' text={blockText} />
+                    <ListElement title='Support' text={blockText} />
+                    <ListElement title='Documentation' text={blockText} />
+                    <ListElement title='Development' text={blockText} />
+                    <ListElement title='Design' text={blockText} />
                 </ul>
             </div>
         )
