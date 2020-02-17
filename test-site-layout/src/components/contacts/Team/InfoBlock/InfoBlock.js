@@ -25,21 +25,6 @@ export default function InfoBlock(props) {
     return (
         <div id={id} className={className}>
             {[...genMembers()]}
-            {/* <TeamMember 
-                img={members[0].img} 
-                name={members[0].name} 
-                position={members[0].position} 
-                links={members[0].links} />
-            <TeamMember 
-                img={members[1].img} 
-                name={members[1].name} 
-                position={members[1].position} 
-                links={members[1].links} />
-            <TeamMember 
-                img={members[2].img} 
-                name={members[2].name} 
-                position={members[2].position} 
-                links={members[2].links} /> */}
         </div>
     )
 }

@@ -28,5 +28,18 @@
         margin-bottom: 0
         margin-top: 0
 
+@mixin list
+    list-style: none
+    list-style-position: inside
+    margin: 0
+    padding: 0
+
+@mixin buttonTemplate($height: 55px, $padding: 0 20px, $bgColor, $border: none)
+    height: $height
+    padding: $padding
+    background-color: $bgColor
+    outline: none
+    border: $border
+        
 
     

@@ -4,6 +4,7 @@ import '../../css/style.css'
 import Home from './Home/Home'
 import About from './About/About'
 import Services from './Services/Services'
+import Portfolio from './Portfolio/Portfolio'
 
 export default class Main extends React.PureComponent {
 
@@ -19,6 +20,7 @@ export default class Main extends React.PureComponent {
                 <Home />
                 <About />
                 <Services />
+                <Portfolio />
             </div>
         )
     }

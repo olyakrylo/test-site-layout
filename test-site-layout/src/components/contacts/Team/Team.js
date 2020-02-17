@@ -13,7 +13,7 @@ export default class Team extends React.Component {
 
     * genBlocks(amount) {
         for(let i = 0; i < amount; ++i) {
-            yield <InfoBlock num={i} hidden={i == 0 ? false : true} />
+            yield <InfoBlock num={i} hidden={i === 0 ? false : true} />
         }
     }
 

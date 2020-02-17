@@ -4,7 +4,7 @@ import '../../../../css/style.css'
 export default class AboutItem extends React.Component {
 
     render() {
-        let styleClass = 'about__img ' + 'about__img_' + this.props.imgName
+        let styleClass = 'about__img about__img_' + this.props.imgName
         return(
             <li>
                 <div className={styleClass}></div>
