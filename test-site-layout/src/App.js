@@ -1,7 +1,9 @@
 import React from 'react';
-import Main from './components/main/Main'
+
 import Header from './components/Header/Header'
+import Main from './components/main/Main'
 import Contacts from './components/contacts/Contacts'
+import Footer from './components/Footer/Footer'
 
 import {
   Route,
@@ -30,6 +32,7 @@ class App extends React.Component {
                   <Route exact history={history} path='/contacts' component={Contacts} />
                   <Redirect from='/' to='/home'/>
               </Switch>
+              <Footer />
           </div>
       );
     }
