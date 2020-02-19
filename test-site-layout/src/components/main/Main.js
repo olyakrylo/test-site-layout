@@ -5,6 +5,7 @@ import Home from './Home/Home'
 import About from './About/About'
 import Services from './Services/Services'
 import Portfolio from './Portfolio/Portfolio'
+import Price from './Price/Price'
 
 export default class Main extends React.PureComponent {
 
@@ -21,6 +22,7 @@ export default class Main extends React.PureComponent {
                 <About />
                 <Services />
                 <Portfolio />
+                <Price />
             </div>
         )
     }
