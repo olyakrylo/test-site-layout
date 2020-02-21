@@ -1,0 +1,114 @@
+@import '../../../sass/variables'
+@import '../../../sass/mixins'
+
+.contacts 
+    width: 100%
+    background-image: url('../media/img/ContactsBack.jpg')
+    background-position: center
+    background-size: cover
+    display: grid
+    grid-template-columns: repeat(10, 1fr)
+    grid-template-rows: repeat(5, minmax(80px, max-content))
+
+.contacts__info
+    grid-column: 2 / 10
+    grid-row: 2 / 3
+    @include bigDescr (white)
+
+.contacts__content
+    grid-column: 2 / 10
+    grid-row: 4 / 5
+
+    .contacts__items
+        @include list
+        display: flex
+        flex-direction: row
+        justify-content: space-evenly
+        align-items: center
+        flex-wrap: wrap
+
+        > li
+            @include font (15px, $semibold, white, 0.5px)
+            text-align: center
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            min-width: 200px
+
+            @media (max-aspect-ratio: 1/1)
+                margin-bottom: 20px
+
+            .item__background
+                height: 100px
+                width: 100px
+                background-color: #3949ab
+                justify-self: center
+                border-radius: 50px
+
+.contacts__form
+    width: 100%
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-template-rows: repeat(3, minmax(40px, max-content))
+    grid-gap: 30px
+
+    .userinfo
+        margin-top: 50px
+        grid-column: 1 / 5
+        grid-row: 1 / 2
+        width: 100%
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+
+        input
+            width: 50%
+            margin: 0
+            max-height: 40px
+        *:nth-child(1)
+            margin-right: 15px
+        *:nth-child(2)
+            margin-left: 15px
+
+        @media (max-width: 700px)
+            flex-direction: column
+            input
+                min-width: 90%
+                margin: 0
+            *:nth-child(1)
+                margin-right: 0px
+                margin-bottom: 15px
+            *:nth-child(2)
+                margin-left: 0px
+                margin-top: 15px
+
+    textarea
+        grid-column: 1 / 5
+        grid-row: 2 / 3
+        min-height: 150px
+
+    button
+        grid-column: 4 / 4
+        grid-row: 3 / 4
+        height: 40px
+        width: 100%
+        min-width: 100px
+        border-radius: 5px
+
+        @include buttonTemplate(60px, $bgColor: white)
+        @include font (15px, $semibold, $color: black, $letterS: 0.5px)
+
+        @media (max-width: 700px)
+            height: 40px
+            
+    input, textarea
+        @include font(13px, $semibold, $letterS: 0.3pt)
+        outline: none
+        border-radius: 5px
+        border: none
+        padding: 20px
+
+        @media (max-width: 700px)
+            padding: 5%
+            
