@@ -40,6 +40,21 @@
     background-color: $bgColor
     outline: none
     border: $border
-        
+    
+@mixin flex($justify: flex-start, $align: flex-start, $direction: row)
+    display: flex
+    @if $justify != flex-start
+        justify-content: $justify
+    @if $align != flex-start
+        align-items: $align
+    @if $direction != row
+        flex-direction: $direction
 
+@mixin blockGrid($columns, $rows)
+    display: grid
+    grid-template-columns: repeat($columns, 1fr)
+    grid-template-rows: repeat($rows, minmax(80px, max-content))
+
+    @media (max-width: 700px)
+        grid-template-rows: repeat($rows, minmax(60px, max-content))
     

@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../../css/style.css'
 import AboutItem from './AboutItem/AboutItem'
+import { faGlobe, faUsers, faUserCog } from '@fortawesome/free-solid-svg-icons'
 
 export default class About extends React.Component {
     render() {
@@ -15,9 +16,9 @@ export default class About extends React.Component {
                 </div>
 
                 <ul className='about__content'>
-                    <AboutItem title='Awesome Icons' blockText={blockText} imgName='internet' />
-                    <AboutItem title='OnePage' blockText={blockText} imgName='transfer' />
-                    <AboutItem title='Fully Responsive' blockText={blockText} imgName='head' />
+                    <AboutItem title='Awesome Icons' blockText={blockText} icon={faGlobe} />
+                    <AboutItem title='OnePage' blockText={blockText} icon={faUsers} />
+                    <AboutItem title='Fully Responsive' blockText={blockText} icon={faUserCog} />
                 </ul>
             </div>
         )

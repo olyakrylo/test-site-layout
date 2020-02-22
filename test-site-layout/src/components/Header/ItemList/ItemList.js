@@ -46,8 +46,7 @@ export default class ItemList extends React.Component {
                 {this.menuItem('About', 'menu-about', '/home', this.scrollToItem, false)}
                 {this.menuItem('Servicing', 'menu-services', '/home', this.scrollToItem, false)}
                 {this.menuItem('Portfolio', 'menu-portfolio', '/home', this.scrollToItem, false)}
-                {/* <li>Portfolio</li> */}
-                <li>Blog</li>
+                {this.menuItem('Blog', 'menu-blog', '/home', this.scrollToItem, false)}
                 {this.menuItem('Contacts', 'menu-contacts', '/contacts', this.props.openOrCloseMenu, true)}
                 <li>
                     <input 

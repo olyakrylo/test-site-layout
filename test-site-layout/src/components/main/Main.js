@@ -6,15 +6,9 @@ import About from './About/About'
 import Services from './Services/Services'
 import Portfolio from './Portfolio/Portfolio'
 import Price from './Price/Price'
+import Blog from './Blog/Blog'
 
 export default class Main extends React.PureComponent {
-
-    // componentDidMount() {
-    //     let pageElem = document.getElementById(this.props.page)
-    //     console.log(this.props.page)
-    //     pageElem.scrollIntoView({behavior: "smooth", block: "start"})
-    // }
-
     render() {
         return(
             <div className='main-container'>
@@ -23,6 +17,7 @@ export default class Main extends React.PureComponent {
                 <Services />
                 <Portfolio />
                 <Price />
+                <Blog />
             </div>
         )
     }

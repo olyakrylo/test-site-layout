@@ -1,5 +1,7 @@
 import React from 'react'
 import '../../../css/style.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMapMarkerAlt, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 export default class ContactsBlock extends React.Component {
     sendForm = e => {
@@ -22,15 +24,21 @@ export default class ContactsBlock extends React.Component {
                 <div className='contacts__content'>
                     <ul className='contacts__items'>
                         <li>
-                            <div className='item__background'>{' '}</div>
+                            <div className='item__background'>
+                                <FontAwesomeIcon icon={faMapMarkerAlt} />
+                            </div>
                             <p>Nobinagar savar, Dhaka<br/>Bangadesh</p>
                         </li>
                         <li>
-                            <div className='item__background'></div>
+                            <div className='item__background'>
+                                <FontAwesomeIcon icon={faPhoneAlt} />
+                            </div>
                             <p>+8801743331996<br/>+8801928737807</p>
                         </li>
                         <li>
-                            <div className='item__background'></div>
+                            <div className='item__background'>
+                                <FontAwesomeIcon icon={faEnvelope} />
+                            </div>
                             <p>quickmasud@gmail.com<br/>quickmasud@yahoo.com</p>
                         </li>
                     </ul>

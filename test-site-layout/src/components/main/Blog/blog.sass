@@ -1,0 +1,79 @@
+@import '../../../sass/variables'
+@import '../../../sass/mixins'
+
+#blog
+    width: 100%
+    @include blockGrid(10, 7)
+    background-color: #e4fdf9
+
+.blog__info
+    grid-column: 2 / 10
+    grid-row: 2 / 3
+    @include bigDescr
+
+.blog__content
+    grid-column: 2 / 10
+    grid-row: 4 / 5
+    @include list
+    
+    @media (min-width: 750px)
+        *:nth-child(even)
+            flex-direction: row-reverse
+    @media ( max-width: 750px)
+        li
+            margin-bottom: 30px
+        *:last-child
+            margin: 0
+        
+
+.blog-item
+    @include flex(space-between, center)
+
+    img, .blog-item__content
+        width: 49%
+
+    @media (max-width: 750px)
+        flex-direction: column
+        img, .blog-item__content
+            width: 100%
+
+.blog-item__content
+    align-self: flex-start
+    margin-top: 40px
+
+    @media (max-width: 750px)
+        margin: 0 0 0 0
+            
+    h3
+        @include font (20px, $semibold, $letterS: 0.5px)
+        transition: .3s
+        &:hover
+            color: $seaGreen
+            cursor: pointer
+
+    p
+        @include font (14px, normal, $letterS: 0.5px)
+
+    .blog-item__keys
+        display: flex
+        flex-direction: row
+        p 
+            font-weight: $semibold
+            width: max-content
+            margin: 0 20px 0 0
+
+.blog__button
+    grid-column: 3 / 9
+    grid-row: 6 / 7
+    align-self: center
+    justify-self: center
+    @include buttonTemplate(50px, $padding: 0 30px, $bgColor: $seaGreen, $border: none)
+    @include font (17px, $semibold, white, 0.5px)
+
+    transition: .3s
+
+    &:hover
+        cursor: pointer
+        color: black
+        background-color: transparent
+        border: 2px solid $seaGreen

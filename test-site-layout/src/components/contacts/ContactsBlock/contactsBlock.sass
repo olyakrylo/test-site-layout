@@ -6,45 +6,39 @@
     background-image: url('../media/img/ContactsBack.jpg')
     background-position: center
     background-size: cover
-    display: grid
-    grid-template-columns: repeat(10, 1fr)
-    grid-template-rows: repeat(5, minmax(80px, max-content))
+    @include blockGrid(8, 5)
 
 .contacts__info
-    grid-column: 2 / 10
+    grid-column: 2 / 8
     grid-row: 2 / 3
     @include bigDescr (white)
 
 .contacts__content
-    grid-column: 2 / 10
+    grid-column: 2 / 8
     grid-row: 4 / 5
 
     .contacts__items
         @include list
-        display: flex
-        flex-direction: row
-        justify-content: space-evenly
-        align-items: center
+        @include flex(space-evenly, center)
         flex-wrap: wrap
 
         > li
             @include font (15px, $semibold, white, 0.5px)
             text-align: center
-            display: flex
-            flex-direction: column
-            justify-content: center
-            align-items: center
+            @include flex(center, center, column)
             min-width: 200px
 
             @media (max-aspect-ratio: 1/1)
                 margin-bottom: 20px
 
             .item__background
+                @include flex(center, center)
                 height: 100px
                 width: 100px
                 background-color: #3949ab
                 justify-self: center
                 border-radius: 50px
+                font-size: 40px
 
 .contacts__form
     width: 100%
@@ -58,9 +52,7 @@
         grid-column: 1 / 5
         grid-row: 1 / 2
         width: 100%
-        display: flex
-        flex-direction: row
-        justify-content: space-between
+        @include flex(space-between)
 
         input
             width: 50%
@@ -87,6 +79,7 @@
         grid-column: 1 / 5
         grid-row: 2 / 3
         min-height: 150px
+        resize: none
 
     button
         grid-column: 4 / 4
@@ -95,12 +88,19 @@
         width: 100%
         min-width: 100px
         border-radius: 5px
+        transition: .3s
 
         @include buttonTemplate(60px, $bgColor: white)
         @include font (15px, $semibold, $color: black, $letterS: 0.5px)
 
         @media (max-width: 700px)
             height: 40px
+
+        &:hover
+            cursor: pointer
+            @include buttonTemplate(60px, $bgColor: transparent, $border: 2px solid white)
+            color: white
+            
             
     input, textarea
         @include font(13px, $semibold, $letterS: 0.3pt)

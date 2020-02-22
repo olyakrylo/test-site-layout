@@ -7,21 +7,13 @@
     min-height: 70px
     height: auto
     background-color: white
-    
-    display: flex
-    flex-direction: row
-    align-items: center
-    justify-content: space-between
-
+    @include flex(space-between, center)
     @include font (17px, $semibold, black, 1px)
     
     z-index: 2
 
 .header__head
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-    align-items: center
+    @include flex(space-between, center)
 
     p
         @include font (20px, bold, black)
@@ -32,10 +24,8 @@
     display: none
 
 .header__menu
-    display: flex
-    flex-direction: row
+    @include flex(flex-end, center)
     flex-wrap: wrap
-    justify-content: flex-end
     list-style: none
     margin-right: 5vw
 
@@ -83,9 +73,7 @@
         display: none
 
     .header__menu_show
-        display: flex
-        flex-direction: column
-        align-items: center
+        @include flex($align: center, $direction: column)
 
     .header__menu_show > li 
         margin-bottom: 15px
