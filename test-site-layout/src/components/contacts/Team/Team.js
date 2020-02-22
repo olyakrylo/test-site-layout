@@ -21,7 +21,7 @@ export default class Team extends React.Component {
         let blocksAmount = Math.ceil(teamInfo.members.length / 3)
         return (
             <div id='team' className='team'>
-                <div className='team__info'>
+                <div className='team__info block-header'>
                     <h2>Our Team Member</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
                 </div>

@@ -3,6 +3,27 @@
   height: auto;
 }
 
+.block-header {
+  max-width: 700px;
+  text-align: center;
+  justify-self: center;
+}
+.block-header h2 {
+  margin-top: 0;
+  font-size: 25px;
+  font-weight: bold;
+  color: #000;
+  letter-spacing: 0.5px;
+  font-family: "Open Sans", sans-serif;
+}
+.block-header p {
+  font-size: 15px;
+  font-weight: normal;
+  color: #000;
+  letter-spacing: 0.5px;
+  font-family: "Open Sans", sans-serif;
+}
+
 .contacts-container {
   width: 100%;
   height: auto;
@@ -275,24 +296,6 @@
 .about__info {
   grid-column: 2/10;
   grid-row: 2/3;
-  max-width: 700px;
-  text-align: center;
-  justify-self: center;
-}
-.about__info h2 {
-  margin-top: 0;
-  font-size: 25px;
-  font-weight: bold;
-  color: #000;
-  letter-spacing: 0.5px;
-  font-family: "Open Sans", sans-serif;
-}
-.about__info p {
-  font-size: 15px;
-  font-weight: normal;
-  color: #000;
-  letter-spacing: 0.5px;
-  font-family: "Open Sans", sans-serif;
 }
 
 .about__content {
@@ -354,24 +357,6 @@
 .services__info {
   grid-column: 2/10;
   grid-row: 2/3;
-  max-width: 700px;
-  text-align: center;
-  justify-self: center;
-}
-.services__info h2 {
-  margin-top: 0;
-  font-size: 25px;
-  font-weight: bold;
-  color: #000;
-  letter-spacing: 0.5px;
-  font-family: "Open Sans", sans-serif;
-}
-.services__info p {
-  font-size: 15px;
-  font-weight: normal;
-  color: #000;
-  letter-spacing: 0.5px;
-  font-family: "Open Sans", sans-serif;
 }
 
 .services__content {
@@ -466,24 +451,6 @@
 .portfolio__info {
   grid-column: 2/10;
   grid-row: 2/3;
-  max-width: 700px;
-  text-align: center;
-  justify-self: center;
-}
-.portfolio__info h2 {
-  margin-top: 0;
-  font-size: 25px;
-  font-weight: bold;
-  color: #000;
-  letter-spacing: 0.5px;
-  font-family: "Open Sans", sans-serif;
-}
-.portfolio__info p {
-  font-size: 15px;
-  font-weight: normal;
-  color: #000;
-  letter-spacing: 0.5px;
-  font-family: "Open Sans", sans-serif;
 }
 
 .portfolio__switcher {
@@ -618,24 +585,6 @@
 .price__info {
   grid-column: 2/10;
   grid-row: 2/3;
-  max-width: 700px;
-  text-align: center;
-  justify-self: center;
-}
-.price__info h2 {
-  margin-top: 0;
-  font-size: 25px;
-  font-weight: bold;
-  color: #000;
-  letter-spacing: 0.5px;
-  font-family: "Open Sans", sans-serif;
-}
-.price__info p {
-  font-size: 15px;
-  font-weight: normal;
-  color: #000;
-  letter-spacing: 0.5px;
-  font-family: "Open Sans", sans-serif;
 }
 
 .price__content {
@@ -781,24 +730,6 @@
 .blog__info {
   grid-column: 2/10;
   grid-row: 2/3;
-  max-width: 700px;
-  text-align: center;
-  justify-self: center;
-}
-.blog__info h2 {
-  margin-top: 0;
-  font-size: 25px;
-  font-weight: bold;
-  color: #000;
-  letter-spacing: 0.5px;
-  font-family: "Open Sans", sans-serif;
-}
-.blog__info p {
-  font-size: 15px;
-  font-weight: normal;
-  color: #000;
-  letter-spacing: 0.5px;
-  font-family: "Open Sans", sans-serif;
 }
 
 .blog__content {
@@ -920,24 +851,6 @@
 .team__info {
   grid-column: 2/10;
   grid-row: 3/4;
-  max-width: 700px;
-  text-align: center;
-  justify-self: center;
-}
-.team__info h2 {
-  margin-top: 0;
-  font-size: 25px;
-  font-weight: bold;
-  color: #000;
-  letter-spacing: 0.5px;
-  font-family: "Open Sans", sans-serif;
-}
-.team__info p {
-  font-size: 15px;
-  font-weight: normal;
-  color: #000;
-  letter-spacing: 0.5px;
-  font-family: "Open Sans", sans-serif;
 }
 
 .team__content {

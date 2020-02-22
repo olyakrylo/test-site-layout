@@ -28,7 +28,7 @@ export default class Blog extends React.Component {
         let infoText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
         return (
             <div id='blog'>
-                <div className='blog__info'>
+                <div className='blog__info block-header'>
                     <h2>Blog</h2>
                     <p>{infoText}</p>
                 </div>

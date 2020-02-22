@@ -8,7 +8,7 @@ export default class Services extends React.Component {
         let blockText = 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.'
         return(
             <div className='services' id='services'>
-                <div className='services__info'>
+                <div className='services__info block-header'>
                     <h2>Our Services</h2>
                     <p>{infoText}</p>
                 </div>

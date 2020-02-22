@@ -10,7 +10,7 @@ export default class About extends React.Component {
 
         return(
             <div className='about' id='about'>
-                <div className='about__info'>
+                <div className='about__info block-header'>
                     <h2>About Us</h2>
                     <p>{infoText}</p>
                 </div>
