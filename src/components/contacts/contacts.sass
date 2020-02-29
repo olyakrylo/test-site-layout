@@ -1,3 +1,23 @@
+@import '../../sass/mixins'
+    
 .contacts-container
     width: 100%
     height: auto
+    position: relative
+
+.pop-up
+    position: relative
+    display: inline-block
+    // top: 50%
+    // left: 0
+    width: 100vw
+    height: 100vh
+    background-color: rgba(0, 0, 0, 0.5)
+    @include flex(center, center)
+
+// .pop-up__body
+//     justify-self: center
+//     align-self: center
+//     width: 500px
+//     max-width: 80vw
+//     background-color: white

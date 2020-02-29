@@ -12,6 +12,11 @@ export default class Contacts extends React.Component {
             <div className='contacts-container'>
                 <Team />
                 <ContactsBlock />
+                {/* <div className='pop-up'>
+                    <div className='pop-up__body'>
+                        Heh
+                    </div>
+                </div> */}
             </div>
         )
     }

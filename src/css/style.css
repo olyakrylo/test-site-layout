@@ -27,6 +27,18 @@
 .contacts-container {
   width: 100%;
   height: auto;
+  position: relative;
+}
+
+.pop-up {
+  position: relative;
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .home {
@@ -985,6 +997,7 @@
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(5, minmax(80px, -webkit-max-content));
   grid-template-rows: repeat(5, minmax(80px, max-content));
+  position: relative;
 }
 @media (max-width: 700px) {
   .contacts {
@@ -1110,9 +1123,45 @@
   min-height: 150px;
   resize: none;
 }
-.contacts__form button {
+.contacts__form .contacts__send-button {
   grid-column: 4/4;
   grid-row: 3/4;
+  position: relative;
+}
+.contacts__form .contacts__send-button .popup {
+  width: 100%;
+  min-width: 200px;
+  background-color: #00897b;
+  text-align: center;
+  position: absolute;
+  bottom: 125%;
+  right: 0;
+  border-radius: 5px;
+  padding: 25px 0 20px 0;
+  visibility: hidden;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  letter-spacing: 0.5px;
+  font-family: "Open Sans", sans-serif;
+}
+.contacts__form .contacts__send-button .wrong {
+  background-color: brown;
+}
+.contacts__form .contacts__send-button .show {
+  visibility: visible;
+}
+.contacts__form .contacts__send-button .popup__close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  color: lightgrey;
+}
+.contacts__form .contacts__send-button .popup__close:hover {
+  cursor: pointer;
+  color: white;
+}
+.contacts__form button {
   height: 40px;
   width: 100%;
   min-width: 100px;
@@ -1128,11 +1177,6 @@
   color: black;
   letter-spacing: 0.5px;
   font-family: "Open Sans", sans-serif;
-}
-@media (max-width: 700px) {
-  .contacts__form button {
-    height: 40px;
-  }
 }
 .contacts__form button:hover {
   cursor: pointer;
