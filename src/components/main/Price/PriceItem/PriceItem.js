@@ -5,7 +5,7 @@ export default function PriceItem(props) {
 
     function * genFeatures() {
         for (let feature of props.features) {
-            yield <li>{feature}</li>
+            yield <li key={`price-item-${feature}`}>{feature}</li>
         }
     }
 

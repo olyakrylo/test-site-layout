@@ -16,6 +16,7 @@ export default function BlockSwitcher(props) {
             }
         }
         props.setBlock(reqBlock)
+        document.getElementById('photo-block-' + reqBlock).scrollIntoView({behavior: 'smooth', block: 'center'});
     }
 
     function * genCircles(amount) {
@@ -25,7 +26,8 @@ export default function BlockSwitcher(props) {
                 <circle id={'circle-' + i}
                     className={i === 0 ? "team__switcher_circle_active" : ""} 
                     cx={cx} cy='10' r='10'
-                    onClick={() => changePhotoBlock(i, amount)} />
+                    onClick={() => changePhotoBlock(i, amount)}
+                    key={`switcher-${i}`} />
             ) 
         }
     }

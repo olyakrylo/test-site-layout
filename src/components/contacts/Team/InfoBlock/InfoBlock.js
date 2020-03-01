@@ -15,7 +15,8 @@ export default function InfoBlock(props) {
                     img={members[i].img} 
                     name={members[i].name} 
                     position={members[i].position} 
-                    links={members[i].links} />
+                    links={members[i].links}
+                    key={`team-member-item-${i}`} />
             )
         }
     }

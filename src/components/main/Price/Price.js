@@ -9,7 +9,8 @@ export default class Price extends React.Component {
             yield (<PriceItem 
                         name={tariff.name}
                         price={tariff.price}
-                        features={tariff.features} />)
+                        features={tariff.features}
+                        key={`price-item-${tariff.name}`} />)
         }
     }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../../css/style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarkerAlt, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faMapMarkerAlt, faPhoneAlt, faEnvelope, faTimes } from '@fortawesome/free-solid-svg-icons'
 
 export default class ContactsBlock extends React.Component {
     state = {
@@ -33,9 +33,22 @@ export default class ContactsBlock extends React.Component {
         document.getElementById('popup').classList.remove('show')
     }
 
+    popupText = () => {
+        if (this.state.name) {
+            return (
+                <span>
+                    name: {this.state.name} <br/>
+                    email: {this.state.email} <br/>
+                    text: {this.state.message}
+                </span>
+            )
+        } else {
+            return <span>type anything!</span>
+        }
+    }
+
     render() {
         let infoText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
-        let info = 'name: ' + this.state.name + '\nemail: ' + this.state.email + '\nmessage: ' + this.state.message;
         return (
             <div className='contacts'>
                 <div className='contacts__info'>
@@ -71,10 +84,10 @@ export default class ContactsBlock extends React.Component {
                         <textarea placeholder='Write Message'></textarea>
                         <div className='contacts__send-button'>
                             <div className='popup' id='popup'>
-                                <span className='popup__close' onClick={this.closePopup}>close</span>
-                                <span>
-                                    {this.state.name ? info : 'type anything!'}
+                                <span className='popup__close' onClick={this.closePopup}>
+                                    <FontAwesomeIcon icon={faTimes} />
                                 </span>
+                                {this.popupText()}
                             </div>
                             <button onClick={this.sendForm}>SEND</button>
                         </div>

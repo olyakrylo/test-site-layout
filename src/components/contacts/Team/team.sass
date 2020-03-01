@@ -3,7 +3,11 @@
 
 .team
     width: 100%
-    @include blockGrid(10, 7)
+    display: grid
+    grid-template-columns: repeat(10, 1fr)
+    grid-template-rows: 20px repeat(6, minmax(80px, max-content))
+    @media (max-width: 700px)
+        grid-template-rows: 50px repeat(6, minmax(60px, max-content))
 
 .team__info
     grid-column: 2 / 10
@@ -79,7 +83,7 @@
 .team__switcher
     grid-column: 5 / 7
     grid-row: 6 / 7
-    @include flex(center, flex-end)
+    @include flex(center, center)
 
     circle
         fill: $seaGreen
@@ -91,8 +95,4 @@
 
     .team__switcher_circle_active
         fill: #3949ab
-
-.test-circle
-    grid-column: 5 / 7
-    grid-row: 7 / 8
         

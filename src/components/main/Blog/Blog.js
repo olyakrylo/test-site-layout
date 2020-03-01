@@ -12,7 +12,7 @@ export default class Blog extends React.Component {
     * genBlogItems() {  
         let items = blogInfo.blogItems;
         for (let i = 0; i < this.state.showingItems; ++i) {
-            yield (<BlogItem info={items[i]} />);
+            yield (<BlogItem info={items[i]} key={`blog-item-${i}`} />);
         }
     }
 
@@ -21,7 +21,6 @@ export default class Blog extends React.Component {
             showingItems:  this.state.all ? 1 : (this.state.showingItems + 1),
             all: this.state.showingItems === blogInfo.blogItems.length - 1
         })
-        console.log(this.state.showingItems + '  ' + this.state.all)
     }
 
     render() {

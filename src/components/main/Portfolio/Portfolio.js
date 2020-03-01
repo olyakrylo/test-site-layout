@@ -14,13 +14,14 @@ export default class Portfolio extends React.Component {
             yield (<PortfolioItem 
                     img={currItem.img} 
                     title={currItem.title}
-                    description={currItem.description} />)
+                    description={currItem.description}
+                    key={`portfolio-item-${i}`} />)
         }
     }
 
     showOrHide = () => {
         if (this.state.all) {
-            document.getElementById('portfolio').scrollIntoView({behavior: "smooth", block: "start"});
+            document.getElementById('portfolio').scrollIntoView({behavior: "smooth", block: "center"});
         }
         this.setState({all: !this.state.all})
     }
@@ -39,7 +40,7 @@ export default class Portfolio extends React.Component {
                     <button>UI/UX DESIGN</button>
                     <button>MOCKUPS</button>
                 </div>
-                <ul className='portfolio__list'>
+                <ul className='portfolio__list' id='portfolio__list'>
                     {[...this.genItems()]}
                 </ul>
                 <button className='portfolio__show-all' onClick={this.showOrHide}>

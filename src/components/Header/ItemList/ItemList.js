@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../../css/style.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 import { Link } from "react-router-dom"
 
@@ -16,14 +16,14 @@ export default class ItemList extends React.Component {
         )
     }
 
-    searchButtonClicked() {
-        let button = document.getElementById('search')
-        if (button.classList.contains('header__search_hidden')) {
-            button.classList.remove('header__search_hidden')
-        } else {
-            // search
-        }
-    }
+    // searchButtonClicked() {
+    //     let button = document.getElementById('search')
+    //     if (button.classList.contains('header__search_hidden')) {
+    //         button.classList.remove('header__search_hidden')
+    //     } else {
+    //         // search
+    //     }
+    // }
 
     scrollToItem = e => {
         e.preventDefault();
@@ -33,7 +33,7 @@ export default class ItemList extends React.Component {
             let elem = document.getElementById(elemId);
             elem.scrollIntoView({behavior: "smooth", block: "start"});
         } catch (err) {
-            console.log(err)
+            console.log('go home')
         }
 
         this.props.openOrCloseMenu();
@@ -48,14 +48,14 @@ export default class ItemList extends React.Component {
                 {this.menuItem('Portfolio', 'menu-portfolio', '/', this.scrollToItem, false)}
                 {this.menuItem('Blog', 'menu-blog', '/', this.scrollToItem, false)}
                 {this.menuItem('Contacts', 'menu-contacts', '/contacts', this.props.openOrCloseMenu, true)}
-                <li>
+                {/* <li>
                     <input 
                         id='search'
                         type='text'
                         className='header__search header__search_hidden'
                         placeholder='Search here...'></input>
                     <FontAwesomeIcon icon={faSearch} onClick={() => this.searchButtonClicked()}/>
-                </li>
+                </li> */}
             </ul>
         )
     }

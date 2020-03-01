@@ -1,6 +1,18 @@
 @import '../../../sass/variables'
 @import '../../../sass/mixins'
 
+@-webkit-keyframes fadeIn
+  from
+      opacity: 0
+  to
+      opacity: 1
+
+@keyframes fadeIn
+  from 
+      opacity: 0
+  to 
+      opacity:1
+
 .contacts 
     width: 100%
     background-image: url('../media/img/ContactsBack.jpg')
@@ -88,7 +100,7 @@
         position: relative
 
         .popup
-            width: 100%
+            width: 80%
             min-width: 200px
             background-color: $seaGreen
             text-align: center
@@ -96,20 +108,33 @@
             bottom: 125%
             right: 0
             border-radius: 5px
-            padding: 25px 0 20px 0
+            padding: 25px 10% 20px 10%
             visibility: hidden
             @include font (14px, $semibold, $color: white, $letterS: 0.5px)
-            
+            &::after
+                content: ""
+                position: absolute
+                top: 100%
+                left: 50%
+                margin-left: -5px
+                border-width: 5px
+                border-style: solid
+                border-color: $seaGreen transparent transparent transparent     
         .wrong
             background-color: brown
+            &::after
+                border-color: brown transparent transparent transparent
         .show
             visibility: visible
+            -webkit-animation: fadeIn 1s
+            animation: fadeIn 1s
             
         .popup__close
             position: absolute
             right: 10px
             top: 5px
-            color: lightgrey
+            color: rgba(255, 255, 255, 0.5)
+            transition: .3s
             &:hover
                 cursor: pointer
                 color: white
@@ -138,5 +163,5 @@
         padding: 20px
 
         @media (max-width: 700px)
-            padding: 5%
+            padding: 8% 5%
             
