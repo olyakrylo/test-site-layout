@@ -9,21 +9,23 @@ import {
   Route,
   Switch,
 //   Redirect,
-  withRouter
+  // withRouter, 
+  // Router
 } from "react-router-dom"
 
 class App extends React.Component {
+
     render() {
-      let { history } = this.props
+      // let { history } = this.props
       return (
           <div>
               <Header />
               <Switch>
-                  <Route exact history={history} path='/' component={Main} />
-                       {/* render={() => <Main page={this.state.showingHomePage} />} /> */}
-
-                  <Route exact history={history} path='/contacts' component={Contacts} />
-                  {/* <Redirect from='/' to='/home'/> */}
+              {/* <Router history={history}> */}
+              {/* <Router> */}
+                  <Route exact path='/' component={Main} />
+                  <Route path='/contacts' component={Contacts} />
+              {/* </Router> */}
               </Switch>
               <Footer />
           </div>
@@ -31,4 +33,5 @@ class App extends React.Component {
     }
 }
 
-export default withRouter(App);
+export default App;
+// export default withRouter(App);

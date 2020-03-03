@@ -8,9 +8,9 @@ import Price from './Price/Price'
 import Blog from './Blog/Blog'
 
 export default class Main extends React.PureComponent {
-    componentDidMount() {
-        document.getElementById('home').scrollIntoView({block: 'start'});
-    }
+    // componentDidMount() {
+    //     document.getElementById('home').scrollIntoView({block: 'start'});
+    // }
 
     render() {
         return(
