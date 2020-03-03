@@ -10,6 +10,7 @@
 
 # production
 /build
+/old-docs
 
 # misc
 .DS_Store
