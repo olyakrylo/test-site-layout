@@ -4,16 +4,16 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import { BrowserRouter } from "react-router-dom"
+import { HashRouter } from "react-router-dom"
 // import {createBrowserHistory} from 'history'
 
 // const history = createBrowserHistory()
 
 ReactDOM.render((
     // <Router history={history}>
-        <BrowserRouter>
+        <HashRouter>
             <App/>
-        </BrowserRouter>
+        </HashRouter>
     ), document.getElementById('root')
 );
 

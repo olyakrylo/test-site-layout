@@ -42,7 +42,7 @@ export default class Header extends React.Component {
                         icon={faTimes} 
                         onClick={() => this.openOrCloseMenu()} />
                 </div>
-                <ItemList openOrCloseMenu={this.openOrCloseMenu} />
+                <ItemList openOrCloseMenu={this.openOrCloseMenu} setScreen={this.props.setScreen}/>
             </div>
         );
     }

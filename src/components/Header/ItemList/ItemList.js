@@ -7,10 +7,9 @@ import { Link } from "react-router-dom"
 
 export default class ItemList extends React.Component {
 
-    menuItem(name, id, linkTo, clickFunc, cannotHide) {
-        let itemClass = document.location.pathname === linkTo || cannotHide ? '' : 'header__menu_item_hidden'
+    menuItem(name, id, linkTo, clickFunc) {
         return (
-            <li id={id} className={itemClass} onClick={clickFunc}>
+            <li id={id} onClick={clickFunc}>
                 <Link to={linkTo} className='header__link'>{name}</Link>
             </li>
         )
@@ -34,20 +33,20 @@ export default class ItemList extends React.Component {
             elem.scrollIntoView({behavior: "smooth", block: "start"});
         } catch (err) {
             console.log('go home')
+            this.props.setScreen(elemId)
         }
-
         this.props.openOrCloseMenu();
     }
 
     render() {
         return(
             <ul className='header__menu animated fadeInDown' id='menu' >
-                {this.menuItem('Home', 'menu-home', '/', this.scrollToItem, true)}
-                {this.menuItem('About', 'menu-about', '/', this.scrollToItem, false)}
-                {this.menuItem('Servicing', 'menu-services', '/', this.scrollToItem, false)}
-                {this.menuItem('Portfolio', 'menu-portfolio', '/', this.scrollToItem, false)}
-                {this.menuItem('Blog', 'menu-blog', '/', this.scrollToItem, false)}
-                {this.menuItem('Contacts', 'menu-contacts', '/contacts', this.props.openOrCloseMenu, true)}
+                {this.menuItem('Home', 'menu-home', '/', this.scrollToItem)}
+                {this.menuItem('About', 'menu-about', '/', this.scrollToItem)}
+                {this.menuItem('Servicing', 'menu-services', '/', this.scrollToItem)}
+                {this.menuItem('Portfolio', 'menu-portfolio', '/', this.scrollToItem)}
+                {this.menuItem('Blog', 'menu-blog', '/', this.scrollToItem)}
+                {this.menuItem('Contacts', 'menu-contacts', '/contacts', this.props.openOrCloseMenu)}
                 {/* <li>
                     <input 
                         id='search'
