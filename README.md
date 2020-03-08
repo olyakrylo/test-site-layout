@@ -1,3 +1,6 @@
+## Deployment
+Open with [pages](https://olyakrylo.github.io/test-site-layout/#/)
+
 ## Layout image example
 ![img](Layout.jpg)
 
