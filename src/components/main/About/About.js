@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../../css/style.css'
 import AboutItem from './AboutItem/AboutItem'
+import Title from '../../lib/title/Title'
 import { faGlobe, faUsers, faUserCog } from '@fortawesome/free-solid-svg-icons'
 
 export default class About extends React.Component {
@@ -10,10 +11,7 @@ export default class About extends React.Component {
 
         return(
             <div className='about' id='about'>
-                <div className='about__info block-header'>
-                    <h2>About Us</h2>
-                    <p>{infoText}</p>
-                </div>
+                <Title addClass={'about__info'} name={'About Us'} description={infoText} />
 
                 <ul className='about__content'>
                     <AboutItem title='Awesome Icons' blockText={blockText} icon={faGlobe} />

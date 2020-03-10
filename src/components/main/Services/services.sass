@@ -4,9 +4,7 @@
 .services
     background-color: #e4fdf9
     width: 100%
-    display: grid
-    grid-template-columns: repeat(10, 1fr)
-    grid-template-rows: repeat(6, minmax(100px, max-content))
+    @include blockGrid(10, 6)
 
 .services__info
     grid-column: 2 / 10

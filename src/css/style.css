@@ -3,27 +3,6 @@
   height: auto;
 }
 
-.block-header {
-  max-width: 700px;
-  text-align: center;
-  justify-self: center;
-}
-.block-header h2 {
-  margin-top: 0;
-  font-size: 25px;
-  font-weight: bold;
-  color: #000;
-  letter-spacing: 0.5px;
-  font-family: "Open Sans", sans-serif;
-}
-.block-header p {
-  font-size: 15px;
-  font-weight: normal;
-  color: #000;
-  letter-spacing: 0.5px;
-  font-family: "Open Sans", sans-serif;
-}
-
 .contacts-container {
   width: 100%;
   height: auto;
@@ -378,8 +357,14 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(6, minmax(100px, -webkit-max-content));
-  grid-template-rows: repeat(6, minmax(100px, max-content));
+  grid-template-rows: repeat(6, minmax(80px, -webkit-max-content));
+  grid-template-rows: repeat(6, minmax(80px, max-content));
+}
+@media (max-width: 700px) {
+  .services {
+    grid-template-rows: repeat(6, minmax(60px, -webkit-max-content));
+    grid-template-rows: repeat(6, minmax(60px, max-content));
+  }
 }
 
 .services__info {
@@ -677,14 +662,14 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-width: 700px;
   text-align: center;
   justify-self: center;
 }
 .tariff h2 {
   margin-top: 0;
+  margin-bottom: 0;
   font-size: 25px;
-  font-weight: bold;
+  font-weight: normal;
   color: white;
   letter-spacing: 0.5px;
   font-family: "Open Sans", sans-serif;
@@ -695,10 +680,6 @@
   color: white;
   letter-spacing: 0.5px;
   font-family: "Open Sans", sans-serif;
-}
-.tariff h2 {
-  font-weight: normal;
-  margin-bottom: 0;
 }
 .tariff p span {
   font-size: 50px;
@@ -1042,24 +1023,9 @@
 .contacts__info {
   grid-column: 2/8;
   grid-row: 2/3;
-  max-width: 700px;
-  text-align: center;
-  justify-self: center;
 }
-.contacts__info h2 {
-  margin-top: 0;
-  font-size: 25px;
-  font-weight: bold;
+.contacts__info *:nth-child(n) {
   color: white;
-  letter-spacing: 0.5px;
-  font-family: "Open Sans", sans-serif;
-}
-.contacts__info p {
-  font-size: 15px;
-  font-weight: normal;
-  color: white;
-  letter-spacing: 0.5px;
-  font-family: "Open Sans", sans-serif;
 }
 
 .contacts__content {

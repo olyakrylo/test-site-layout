@@ -3,6 +3,7 @@ import '../../../css/style.css'
 import teamInfo from './teamInfo'
 import InfoBlock from './InfoBlock/InfoBlock'
 import BlockSwitcher from './BlockSwitcher/BlockSwitcher'
+import Title from '../../lib/title/Title'
 
 export default class Team extends React.Component {
     state = { currentBlock: 0 }
@@ -22,12 +23,10 @@ export default class Team extends React.Component {
 
     render() {
         let blocksAmount = Math.ceil(teamInfo.members.length / 3)
+        let infoText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
         return (
             <div id='team' className='team'>
-                <div className='team__info block-header'>
-                    <h2>Our Team Member</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-                </div>
+                <Title addClass={'team__info'} name={'Our Team Members'} description={infoText} />
 
                 {[...this.genBlocks(blocksAmount)]}
 

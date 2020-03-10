@@ -59,15 +59,20 @@
     background-color: #3949ab
     mask: url('../media/svg/Frame.svg') bottom left / cover
     @include flex(center, center, $direction: column)
-    @include bigDescr(white)
+
+    text-align: center
+    justify-self: center
     
     h2
-        font-weight: normal
+        margin-top: 0
         margin-bottom: 0
-    p span
-        font-size: 50px
-        sup
-            font-size: 25px
+        @include font (25px, normal, white, $letterS: 0.5px)
+    p
+        @include font (15px, normal, white, $letterS: 0.5px)
+        span
+            font-size: 50px
+            sup
+                font-size: 25px
 
 .tariff__features
     grid-column: 2 / 4

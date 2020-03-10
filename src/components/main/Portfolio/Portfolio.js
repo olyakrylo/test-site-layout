@@ -2,6 +2,7 @@ import React from 'react'
 import '../../../css/style.css'
 import PortfolioItem from './PortfolioItem/PortfolioItem'
 import portfolioInfo from './portfolioInfo'
+import Title from '../../lib/title/Title'
 
 export default class Portfolio extends React.Component {
     state = { all: false };
@@ -30,10 +31,7 @@ export default class Portfolio extends React.Component {
         let infoText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
         return (
             <div className='portfolio' id='portfolio'>
-                <div className='portfolio__info block-header'>
-                    <h2>Latest Works</h2>
-                    <p>{infoText}</p>
-                </div>
+                <Title addClass={'portfolio__info'} name={'Latest Works'} description={infoText} />
                 <div className='portfolio__switcher'>
                     <button>ALL</button>
                     <button>WEB DESIGN</button>

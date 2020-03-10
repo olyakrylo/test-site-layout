@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../../css/style.css'
 import ListElement from './ListElement/ListElement'
+import Title from '../../lib/title/Title'
 
 export default class Services extends React.Component {
     render() {
@@ -8,10 +9,7 @@ export default class Services extends React.Component {
         let blockText = 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.'
         return(
             <div className='services' id='services'>
-                <div className='services__info block-header'>
-                    <h2>Our Services</h2>
-                    <p>{infoText}</p>
-                </div>
+                <Title addClass={'services__info'} name={'Our Services'} description={infoText} />
 
                 <ul className='services__content'>
                     <ListElement title='Research' text={blockText} />

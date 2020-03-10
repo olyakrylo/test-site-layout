@@ -2,6 +2,7 @@ import React from 'react'
 import '../../../css/style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt, faPhoneAlt, faEnvelope, faTimes } from '@fortawesome/free-solid-svg-icons'
+import Title from '../../lib/title/Title'
 
 export default class ContactsBlock extends React.Component {
     state = {
@@ -51,10 +52,7 @@ export default class ContactsBlock extends React.Component {
         let infoText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
         return (
             <div className='contacts'>
-                <div className='contacts__info'>
-                    <h2>Contact Us</h2>
-                    <p>{infoText}</p>
-                </div>
+                <Title addClass={'contacts__info'} name={'Contact Us'} description={infoText} />
                 <div className='contacts__content'>
                     <ul className='contacts__items'>
                         <li>

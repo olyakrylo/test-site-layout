@@ -2,6 +2,7 @@ import React from 'react'
 import '../../../css/style.css'
 import PriceItem from './PriceItem/PriceItem'
 import tariffs from './tariffs'
+import Title from '../../lib/title/Title'
 
 export default class Price extends React.Component {
     * genPriceItems() {
@@ -18,10 +19,7 @@ export default class Price extends React.Component {
         let infoText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
         return (
             <div className='price'>
-                <div className='price__info block-header'>
-                    <h2>Pricing Plan</h2>
-                    <p>{infoText}</p>
-                </div>
+                <Title addClass={'price__info'} name={'Pricing Plan'} description={infoText} />
                 <ul className='price__content'>
                     {[...this.genPriceItems()]}
                 </ul>

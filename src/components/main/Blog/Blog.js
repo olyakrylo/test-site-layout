@@ -2,6 +2,7 @@ import React from 'react'
 import '../../../css/style.css'
 import BlogItem from './BlogItem/BlogItem'
 import blogInfo from './blogInfo'
+import Title from '../../lib/title/Title'
 
 export default class Blog extends React.Component {
     state = { 
@@ -27,10 +28,7 @@ export default class Blog extends React.Component {
         let infoText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
         return (
             <div id='blog'>
-                <div className='blog__info block-header'>
-                    <h2>Blog</h2>
-                    <p>{infoText}</p>
-                </div>
+                <Title addClass={'blog__info'} name={'Blog'} description={infoText} />
                 <ul className='blog__content'>
                     {[...this.genBlogItems()]}
                 </ul>
