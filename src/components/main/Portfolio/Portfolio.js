@@ -5,6 +5,14 @@ import portfolioInfo from './portfolioInfo'
 import Title from '../../lib/title/Title'
 
 export default class Portfolio extends React.Component {
+    componentDidMount() {
+        window.addEventListener('scroll', this.props.colorHeaderItems.bind(null, 'portfolio'));
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.props.colorHeaderItems.bind(null, 'portfolio'));
+    }
+
     state = { all: false };
 
     * genItems() {

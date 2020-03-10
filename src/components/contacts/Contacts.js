@@ -6,12 +6,12 @@ export default class Contacts extends React.Component {
     componentDidMount() {
         document.getElementById('team').scrollIntoView({block: 'start'});
 
-        window.addEventListener('scroll', this.props.visible);
-        this.props.visible()
+        window.addEventListener('scroll', this.props.arrowVisibility);
+        this.props.arrowVisibility()
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.props.visible);
+        window.removeEventListener('scroll', this.props.arrowVisibility);
     }
 
     render() {

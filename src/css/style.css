@@ -197,22 +197,23 @@
   list-style: none;
   margin-right: 5vw;
 }
-.header__menu li {
+
+.header__item {
   margin-right: 30px;
-  transition: 300ms;
 }
-.header__menu li:hover {
-  color: #00897b;
-  cursor: pointer;
-}
-.header__menu .header__link {
+
+.header__link {
   color: black;
   text-decoration: none;
   transition: 300ms;
 }
-.header__menu .header__link:hover {
+.header__link:hover {
   color: #00897b;
   cursor: pointer;
+}
+
+.header__link_colored {
+  color: #00897b;
 }
 
 .header__search {

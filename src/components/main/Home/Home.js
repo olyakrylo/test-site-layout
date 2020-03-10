@@ -4,6 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
 export default class Home extends React.Component {
+    componentDidMount() {
+        window.addEventListener('scroll', this.props.colorHeaderItems.bind(null, 'home'));
+        this.props.colorHeaderItems('home');
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.props.colorHeaderItems.bind(null, 'home'));
+    }
+
     scrollToAbout() {
         let about = document.getElementById('about')
 

@@ -5,6 +5,14 @@ import blogInfo from './blogInfo'
 import Title from '../../lib/title/Title'
 
 export default class Blog extends React.Component {
+    componentDidMount() {
+        window.addEventListener('scroll', this.props.colorHeaderItems.bind(null, 'blog'));
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.props.colorHeaderItems.bind(null, 'blog'));
+    }
+
     state = { 
         showingItems: 1,
         all: false

@@ -9,8 +9,8 @@ export default class ItemList extends React.Component {
 
     menuItem(name, id, linkTo, clickFunc) {
         return (
-            <li id={id} onClick={clickFunc}>
-                <Link to={linkTo} className='header__link'>{name}</Link>
+            <li id={id} onClick={clickFunc} className='header__item'>
+                <Link id={id + '-link'} to={linkTo} className='header__link'>{name}</Link>
             </li>
         )
     }

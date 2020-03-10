@@ -5,6 +5,15 @@ import Title from '../../lib/title/Title'
 import { faGlobe, faUsers, faUserCog } from '@fortawesome/free-solid-svg-icons'
 
 export default class About extends React.Component {
+    componentDidMount() {
+        window.addEventListener('scroll', this.props.colorHeaderItems.bind(null, 'about'));
+        // this.props.colorHeaderItems('about');
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.props.colorHeaderItems.bind(null, 'about'));
+    }
+
     render() {
         let infoText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
         let blockText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor'

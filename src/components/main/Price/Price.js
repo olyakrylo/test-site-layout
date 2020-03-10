@@ -5,6 +5,14 @@ import tariffs from './tariffs'
 import Title from '../../lib/title/Title'
 
 export default class Price extends React.Component {
+    // componentDidMount() {
+    //     window.addEventListener('scroll', this.props.colorHeaderItems.bind(null, 'price'));
+    // }
+
+    // componentWillUnmount() {
+    //     window.removeEventListener('scroll', this.props.colorHeaderItems.bind(null, 'price'));
+    // }
+
     * genPriceItems() {
         for (let tariff of tariffs.tariffs) {
             yield (<PriceItem 

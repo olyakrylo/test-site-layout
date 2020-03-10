@@ -4,6 +4,14 @@ import ListElement from './ListElement/ListElement'
 import Title from '../../lib/title/Title'
 
 export default class Services extends React.Component {
+    componentDidMount() {
+        window.addEventListener('scroll', this.props.colorHeaderItems.bind(null, 'services'));
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.props.colorHeaderItems.bind(null, 'services'));
+    }
+
     render() {
         let infoText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
         let blockText = 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.'

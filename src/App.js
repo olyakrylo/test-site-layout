@@ -23,7 +23,7 @@ class App extends React.Component {
       this.setState({ screenId: screen })
     } 
 
-    showOrHideArrow() {
+    arrowVisibility() {
         let element = document.getElementById('home') || document.getElementById('team')
 
         let targetPosition = {
@@ -40,9 +40,7 @@ class App extends React.Component {
             };
       
         if (targetPosition.bottom > windowPosition.top && 
-            targetPosition.top < windowPosition.bottom &&
-            targetPosition.right > windowPosition.left && 
-            targetPosition.left < windowPosition.right) { 
+            targetPosition.top < windowPosition.bottom) { 
 
             document.getElementById('up-arrow').style.display = 'none';
         } else {
@@ -58,8 +56,8 @@ class App extends React.Component {
               <Switch>
                   <Route exact path='/' render={() => <Main 
                                                       screenId={this.state.screenId} 
-                                                      visible={this.showOrHideArrow} />} />
-                  <Route path='/contacts' render={() => <Contacts visible={this.showOrHideArrow} />} />
+                                                      arrowVisibility={this.arrowVisibility} />} />
+                  <Route path='/contacts' render={() => <Contacts arrowVisibility={this.arrowVisibility} />} />
               </Switch>
               <div className="up-arrow animated bounceInUp" id='up-arrow'
                     onClick={scrollUp}>
