@@ -5,12 +5,12 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
 export default class Home extends React.Component {
     componentDidMount() {
-        window.addEventListener('scroll', this.props.colorHeaderItems.bind(null, 'home'));
-        this.props.colorHeaderItems('home');
+        window.addEventListener('scroll', this.props.colorHeaderItems);
+        this.props.colorHeaderItems();
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.props.colorHeaderItems.bind(null, 'home'));
+        window.removeEventListener('scroll', this.props.colorHeaderItems);
     }
 
     scrollToAbout() {

@@ -6,11 +6,11 @@ import Title from '../../lib/title/Title'
 
 export default class Blog extends React.Component {
     componentDidMount() {
-        window.addEventListener('scroll', this.props.colorHeaderItems.bind(null, 'blog'));
+        window.addEventListener('scroll', this.props.colorHeaderItems);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.props.colorHeaderItems.bind(null, 'blog'));
+        window.removeEventListener('scroll', this.props.colorHeaderItems);
     }
 
     state = { 

@@ -52,12 +52,12 @@ export default class Main extends React.PureComponent {
     render() {
         return(
             <div className='main-container'>
-                <Home colorHeaderItems={this.colorHeaderItems} />
-                <About colorHeaderItems={this.colorHeaderItems} />
-                <Services colorHeaderItems={this.colorHeaderItems} />
-                <Portfolio colorHeaderItems={this.colorHeaderItems} />
-                <Price colorHeaderItems={this.colorHeaderItems} />
-                <Blog colorHeaderItems={this.colorHeaderItems} />
+                <Home colorHeaderItems={this.colorHeaderItems.bind(null, 'home')} />
+                <About colorHeaderItems={this.colorHeaderItems.bind(null, 'about')} />
+                <Services colorHeaderItems={this.colorHeaderItems.bind(null, 'services')} />
+                <Portfolio colorHeaderItems={this.colorHeaderItems.bind(null, 'portfolio')} />
+                <Price />
+                <Blog colorHeaderItems={this.colorHeaderItems.bind(null, 'blog')} />
             </div>
         )
     }

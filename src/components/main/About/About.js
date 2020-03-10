@@ -6,12 +6,11 @@ import { faGlobe, faUsers, faUserCog } from '@fortawesome/free-solid-svg-icons'
 
 export default class About extends React.Component {
     componentDidMount() {
-        window.addEventListener('scroll', this.props.colorHeaderItems.bind(null, 'about'));
-        // this.props.colorHeaderItems('about');
+        window.addEventListener('scroll', this.props.colorHeaderItems);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.props.colorHeaderItems.bind(null, 'about'));
+        window.removeEventListener('scroll', this.props.colorHeaderItems);
     }
 
     render() {

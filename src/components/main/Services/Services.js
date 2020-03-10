@@ -5,11 +5,11 @@ import Title from '../../lib/title/Title'
 
 export default class Services extends React.Component {
     componentDidMount() {
-        window.addEventListener('scroll', this.props.colorHeaderItems.bind(null, 'services'));
+        window.addEventListener('scroll', this.props.colorHeaderItems);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.props.colorHeaderItems.bind(null, 'services'));
+        window.removeEventListener('scroll', this.props.colorHeaderItems);
     }
 
     render() {
