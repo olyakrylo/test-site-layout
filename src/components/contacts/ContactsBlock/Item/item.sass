@@ -1,0 +1,17 @@
+@import '../../../../sass/variables'
+@import '../../../../sass/mixins'
+    
+.list-item
+    @include font (15px, $semibold, white, 0.5px)
+    text-align: center
+    @include flex(center, center, column)
+    min-width: 200px
+
+.list-item__background
+    @include flex(center, center)
+    height: 100px
+    width: 100px
+    background-color: #3949ab
+    justify-self: center
+    border-radius: 50px
+    font-size: 40px

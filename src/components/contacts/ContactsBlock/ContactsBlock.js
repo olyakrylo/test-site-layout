@@ -1,95 +1,29 @@
 import React from 'react'
 import '../../../css/style.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarkerAlt, faPhoneAlt, faEnvelope, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faMapMarkerAlt, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import Title from '../../lib/title/Title'
+import Form from './Form/Form'
+import Item from './Item/Item'
 
 export default class ContactsBlock extends React.Component {
-    state = {
-        name: '',
-        email: '',
-        message: ''
-    };
-
-    sendForm = e => {
-        let name = document.getElementById('form-name').value;
-        let email = document.getElementById('form-email').value;
-        let message = document.getElementsByTagName('textarea')[0].value
-        let popup = document.getElementById('popup')
-        if (name && email && message) {
-            this.setState({
-                name: document.getElementById('form-name').value,
-                email: document.getElementById('form-email').value,
-                message: document.getElementsByTagName('textarea')[0].value
-            });
-            popup.classList.remove('wrong')
-        } else {
-            popup.classList.add('wrong')
-        }
-
-        popup.classList.add('show')
-    }
-
-    closePopup = () => {
-        document.getElementById('popup').classList.remove('show')
-    }
-
-    popupText = () => {
-        if (this.state.name) {
-            return (
-                <span>
-                    name: {this.state.name} <br/>
-                    email: {this.state.email} <br/>
-                    text: {this.state.message}
-                </span>
-            )
-        } else {
-            return <span>type anything!</span>
-        }
-    }
 
     render() {
         let infoText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
         return (
             <div className='contacts'>
                 <Title addClass={'contacts__info'} name={'Contact Us'} description={infoText} />
+
                 <div className='contacts__content'>
                     <ul className='contacts__items'>
-                        <li>
-                            <div className='item__background'>
-                                <FontAwesomeIcon icon={faMapMarkerAlt} />
-                            </div>
-                            <p>Nobinagar savar, Dhaka<br/>Bangadesh</p>
-                        </li>
-                        <li>
-                            <div className='item__background'>
-                                <FontAwesomeIcon icon={faPhoneAlt} />
-                            </div>
-                            <p>+8801743331996<br/>+8801928737807</p>
-                        </li>
-                        <li>
-                            <div className='item__background'>
-                                <FontAwesomeIcon icon={faEnvelope} />
-                            </div>
-                            <p>quickmasud@gmail.com<br/>quickmasud@yahoo.com</p>
-                        </li>
+                        <Item icon={faMapMarkerAlt}
+                              text={<p>Nobinr savar, Dhaka <br /> Bangadesh</p>} />
+                        <Item icon={faPhoneAlt}
+                              text={<p>+8801743331996<br />+8801928737807</p>} />
+                        <Item icon={faEnvelope}
+                              text={<p>quickmasud@gmail.com<br />quickmasud@gmail.com</p>} />
                     </ul>
-                    <div className='contacts__form'>
-                        <div className='userinfo'>
-                            <input type='text' placeholder='Your NAME' id='form-name'></input>
-                            <input type='text' placeholder='Your Email' id='form-email'></input>
-                        </div>
-                        <textarea placeholder='Write Message'></textarea>
-                        <div className='contacts__send-button'>
-                            <div className='popup' id='popup'>
-                                <span className='popup__close' onClick={this.closePopup}>
-                                    <FontAwesomeIcon icon={faTimes} />
-                                </span>
-                                {this.popupText()}
-                            </div>
-                            <button onClick={this.sendForm}>SEND</button>
-                        </div>
-                    </div>
+
+                    <Form />
                 </div>
             </div>
         )

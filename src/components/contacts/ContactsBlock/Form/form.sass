@@ -1,0 +1,82 @@
+@import '../../../../sass/variables'
+@import '../../../../sass/mixins'
+    
+.contacts-form
+    width: 100%
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-template-rows: repeat(3, minmax(40px, max-content))
+    grid-gap: 30px
+
+.contacts-form__userinfo
+    margin-top: 50px
+    grid-column: 1 / 5
+    grid-row: 1 / 2
+    width: 100%
+    @include flex(space-between)
+    @media (max-width: 700px)
+        flex-direction: column
+
+.contacts-form__name, .contacts-form__email, .contacts-form__message
+    @include font(13px, $semibold, $letterS: 0.3pt)
+    outline: none
+    border-radius: 5px
+    border: none
+    padding: 20px
+
+    @media (max-width: 700px)
+        padding: 8% 5%
+
+.contacts-form__name, .contacts-form__email
+    width: 50%
+    margin: 0
+    max-height: 40px
+    @media (max-width: 700px)
+        min-width: 90%
+        margin: 0
+
+.contacts-form__name
+    margin-right: 15px
+    @media (max-width: 700px)
+        margin-right: 0px
+        margin-bottom: 15px
+
+.contacts-form__email
+    margin-left: 15px
+    @media (max-width: 700px)
+        margin-left: 0px
+        margin-top: 15px
+
+.contacts-form__message
+    grid-column: 1 / 5
+    grid-row: 2 / 3
+    min-height: 150px
+    resize: none
+
+.contacts-form__send-button
+    grid-column: 4 / 4
+    grid-row: 3 / 4
+    position: relative
+
+.contacts-form__popup
+    width: 80%
+    position: absolute
+    bottom: 125%
+    right: 0
+
+.contacts-form__button
+    height: 40px
+    width: 100%
+    min-width: 100px
+    border-radius: 5px
+    transition: .3s
+
+    @include buttonTemplate(60px, $bgColor: white)
+    @include font (15px, $semibold, $color: black, $letterS: 0.5px)
+
+    &:hover
+        cursor: pointer
+        @include buttonTemplate(60px, $bgColor: transparent, $border: 2px solid white)
+        color: white
+            
+            
