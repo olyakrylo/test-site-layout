@@ -7,10 +7,11 @@ export default function Popup({addClass, isRight, text, isShowing, closePopup}) 
     function close() {
         let popup = document.getElementsByClassName('popup')[0];
         popup.classList.add('rollOut');
-        setTimeout( () => {
+        popup.addEventListener('animationend', function handler() {
+            popup.removeEventListener('animationend', handler);
             popup.classList.remove('rollOut');
-            closePopup()
-        }, 800);
+            closePopup();
+        });
     }
 
     return (

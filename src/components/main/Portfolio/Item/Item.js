@@ -1,12 +1,12 @@
 import React from 'react'
 import '../../../../css/style.css'
 
-export default function PortfolioItem(props) {
+export default function Item(props) {
     let imgPath = 'img/' + props.img
     return (
-        <li className='animated fadeIn'>
+        <li className='portfolio__item animated fadeIn'>
             <img src={imgPath} alt=''></img>
-            <div className='portfolio__item-hover'>
+            <div className='portfolio__item_hover'>
                 <h3>{props.title}</h3>
                 <p>{props.description}</p>
             </div>

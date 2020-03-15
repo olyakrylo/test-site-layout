@@ -1,6 +1,6 @@
 @import '../../../sass/variables'
 @import '../../../sass/mixins'
-@import 'home-mixins'
+@import './Buttons/buttons'
 
 .home 
     @include flex(center, center, $direction: column)
@@ -17,39 +17,14 @@
     @include flex($align: center, $direction: column)
     text-align: center
 
-    h1 
-        @include font (60px, $semibold, white, $letterS: 3pt)
-        max-width: 90vw
-        margin-bottom: 0
+.home__title 
+    @include font (60px, $semibold, white, $letterS: 3pt)
+    max-width: 90vw
+    margin-bottom: 0
 
-    h4 
-        @include font (20px, normal, white, $letterS: 1pt)
-        margin-top: 15px
-    
-.home__buttons 
-    @include flex(center, center)
-    flex-wrap: wrap
-    margin-top: 10vh
-
-    button 
-        @include font(20px, $semibold, $letterS: 1pt)
-        @include flex(center, center)
-        width: 220px
-        max-width: 50vw
-        height: 70px
-        max-height: 20vw
-        margin: 12.5px
-        outline: none
-        transition: 500ms
-
-        &:hover
-            cursor: pointer
-
-    :nth-child(1) 
-        @include homeButton(transparent, white, 2px solid white, 2px solid white, white, black)
-
-    :nth-child(2)
-        @include homeButton($seaGreen, transparent, none, 2px solid $seaGreen, white, $seaGreen)
+.home__description
+    @include font (20px, normal, white, $letterS: 1pt)
+    margin-top: 15px
 
 .home__angle 
     margin-top: 5vh
@@ -65,16 +40,16 @@
         transform: scale(1.3)
         transition-duration: 300ms
 
-@media (max-aspect-ratio: 1/1) 
+@media (max-width: 450px) 
     .home__content 
         margin-top: 20vh
 
-        h1 
-            font-size: 35px 
-            letter-spacing: 1pt
+    .home__title 
+        font-size: 35px 
+        letter-spacing: 1pt
 
-    .home__content > h4, .home__buttons > button 
-        font-size: 14px
+    .home__description
+        font-size: 15px
 
     .home__angle 
         margin-top: 8vh

@@ -2,6 +2,7 @@ import React from 'react'
 import '../../../css/style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import Buttons from './Buttons/Buttons'
 
 export default class Home extends React.Component {
     componentDidMount() {
@@ -13,26 +14,23 @@ export default class Home extends React.Component {
         window.removeEventListener('scroll', this.props.colorHeaderItems);
     }
 
-    scrollToAbout() {
-        let about = document.getElementById('about')
-
-        about.scrollIntoView({behavior: "smooth"})
+    scrollToItem(id) {
+        document.getElementById(id).scrollIntoView({behavior: "smooth", block: 'start'});
     }
 
     render() {
         return (
             <div className='home' id='home'>
                 <div className="home__content">
-                    <h1>Web development project</h1>
-                    <h4>Very suitable to support all web development projects</h4>
-                    <div className="home__buttons">
-                        <button>OUR SERVICES</button>
-                        <button>HIRE IS NOW</button>
-                    </div>
+                    <h1 className='home__title'>Web development project</h1>
+                    <h4 className='home__description'>Very suitable to support all web development projects</h4>
+
+                    <Buttons scrollToItem={this.scrollToItem} />
+
                     <FontAwesomeIcon 
                         className="home__angle" 
                         icon={faAngleDown}
-                        onClick={this.scrollToAbout} />
+                        onClick={() => this.scrollToItem('about')} />
                 </div>
             </div>
         );

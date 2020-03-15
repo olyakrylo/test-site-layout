@@ -7,23 +7,10 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 export default class Header extends React.Component {
 
     openOrCloseMenu = () => {
-        let menu = document.getElementById('menu');
-        let crossItem = document.getElementById('cross');
-        let burgerItem = document.getElementById('burger');
-        let menuShowClass = 'header__menu_show';
-        let barHiddenClass = 'header__bar_hidden';
-        
-        if (menu.classList.contains(menuShowClass)) {
-            menu.classList.remove(menuShowClass)
+        document.getElementById('menu').classList.toggle('header__menu_show');
 
-            burgerItem.classList.remove(barHiddenClass);
-            crossItem.classList.add(barHiddenClass);
-        } else {
-            menu.classList.add(menuShowClass);
-
-            crossItem.classList.remove(barHiddenClass);
-            burgerItem.classList.add(barHiddenClass);
-        }
+        document.getElementById('burger').classList.toggle('header__bar_hidden');
+        document.getElementById('cross').classList.toggle('header__bar_hidden');
     }
 
     render() {
@@ -42,7 +29,9 @@ export default class Header extends React.Component {
                         icon={faTimes} 
                         onClick={() => this.openOrCloseMenu()} />
                 </div>
-                <ItemList openOrCloseMenu={this.openOrCloseMenu} setScreen={this.props.setScreen}/>
+                {/* <div id='item-list' className='item-list animated slideInDown' style={{backgroundColor: 'red'}}> */}
+                    <ItemList openOrCloseMenu={this.openOrCloseMenu} setScreen={this.props.setScreen}/>
+                {/* </div> */}
             </div>
         );
     }

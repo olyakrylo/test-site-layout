@@ -1,0 +1,44 @@
+@import '../../../sass/variables'
+@import '../../../sass/mixins'
+
+@mixin homeButton($bgColor, $bgColorHover, $border, $borderHover, $color, $colorHover)
+    background-color: $bgColor
+    border: $border
+    color: $color
+
+    @media screen and (min-width: 500px)
+        &:hover
+            background-color: $bgColorHover
+            border: $borderHover
+            color: $colorHover
+
+.button
+    @include font ($size: 20px, $weight: $semibold, $letterS: 1pt)
+    @include flex(center, center)
+    width: 220px
+    max-width: 50vw
+    height: 70px
+    max-height: 20vw
+    outline: none
+    transition: 500ms
+
+    @media (max-width: 400px)
+        font-size: 15px
+
+    &:hover
+        cursor: pointer
+
+.button_white 
+    @include homeButton(transparent, white, 2px solid white, 2px solid white, white, black)
+
+.button_seagreen
+    @include homeButton($seaGreen, transparent, none, 2px solid $seaGreen, white, $seaGreen)
+
+.button_black
+    @include homeButton(transparent, $seaGreen, 2px solid black, none, black, white)
+
+.button_seagreen-black
+    @include homeButton(transparent, $seaGreen, 2px solid $seaGreen, 2px solid $seaGreen, black, white)
+    
+    
+    

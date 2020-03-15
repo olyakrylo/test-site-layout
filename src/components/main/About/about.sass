@@ -1,5 +1,5 @@
-@import '../../../sass/variables'
 @import '../../../sass/mixins'
+@import './AboutItem/about-item'
     
 .about
     background-color: white
@@ -17,23 +17,3 @@
     @include list
     @include flex(space-evenly, center)
     flex-wrap: wrap
-
-    li
-        @include flex(center, center, $direction: column)
-        @include smallDescr
-        min-width: 250px
-        width: 25%
-
-        &:nth-child(2)
-            margin: 0 10px
-
-        @media (max-aspect-ratio: 1/1)
-            width: 80%
-            &:nth-child(2)
-                margin: 50px 0
-
-.about__img
-    width: 80px
-    height: 80px
-    @include flex(center, center)
-    font-size: 50px

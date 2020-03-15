@@ -1,5 +1,6 @@
 @import '../../../sass/variables'
 @import '../../../sass/mixins'
+@import './Item/item'
     
 .portfolio
     background-color: white
@@ -19,19 +20,20 @@
     @include flex(center, center)
     flex-wrap: wrap
 
-    > button
-        @include buttonTemplate($bgColor: white, $border: 2px solid $seaGreen) 
-        @include font (18px, $semibold, $letterS: 1pt)
+.portfolio__button
+    font-size: 18px !important
+    width: auto !important
+    height: 55px !important
+    padding: 0 20px
 
-        margin: 10px 10px
-        @media (max-width: 400px)
-            margin: 5px 5px
+    margin: 10px 10px
+    @media (max-width: 400px)
+        margin: 5px 5px
 
-        &:hover
-            cursor: pointer
-            color: white
-            background-color: $seaGreen
-            transition: 500ms
+.portfolio__button_selected
+    color: $seaGreen !important
+    &:hover
+        color: white !important
 
 .portfolio__list
     grid-column: 2 / 10
@@ -45,46 +47,11 @@
     @media (max-aspect-ratio: 1/1)
         grid-template-columns: repeat(auto-fit, minmax(70vw, 1fr))
 
-    > li
-
-        @include flex(center, center)
-        position: relative
-
-        img
-            width: 100%
-
-        .portfolio__item-hover
-            position: absolute
-            top: 0
-            left: 0
-            width: 100%
-            height: 100%
-            text-align: center
-            @include flex(center, center, column)
-            color: rgba(0, 0, 0, 0)
-            transition: .5s
-
-            &:hover
-                background-color: rgba(0, 0, 0, 0.7)
-                @include smallDescr(white)
-                cursor: pointer
-
 .portfolio__show-all
     grid-column: 2 / 10
     grid-row: 8 / 9
 
     align-self: center
     justify-self: center
-
-    @include buttonTemplate($bgColor: $seaGreen)
-    @include font(17px, $semibold, white, $letterS: 1pt)
-
-    transition: .5s
-
-    &:hover
-        cursor: pointer
-        color: black
-        background-color: transparent
-        border: 2px solid $seaGreen
 
 

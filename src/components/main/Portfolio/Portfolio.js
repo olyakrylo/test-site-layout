@@ -1,8 +1,9 @@
 import React from 'react'
 import '../../../css/style.css'
-import PortfolioItem from './PortfolioItem/PortfolioItem'
+import Item from './Item/Item'
 import portfolioInfo from './portfolioInfo'
 import Title from '../../lib/title/Title'
+import Button from '../../lib/button/Button'
 
 export default class Portfolio extends React.Component {
     componentDidMount() {
@@ -20,7 +21,7 @@ export default class Portfolio extends React.Component {
 
         for (let i = 0; i < amount; ++i) {
             let currItem = portfolioInfo.items[i];
-            yield (<PortfolioItem 
+            yield (<Item 
                     img={currItem.img} 
                     title={currItem.title}
                     description={currItem.description}
@@ -41,17 +42,17 @@ export default class Portfolio extends React.Component {
             <div className='portfolio' id='portfolio'>
                 <Title addClass={'portfolio__info'} name={'Latest Works'} description={infoText} />
                 <div className='portfolio__switcher'>
-                    <button>ALL</button>
-                    <button>WEB DESIGN</button>
-                    <button>UI/UX DESIGN</button>
-                    <button>MOCKUPS</button>
+                    <Button title='ALL' addClasses='button_seagreen-black portfolio__button portfolio__button_selected' />
+                    <Button title='WEB DESIGN' addClasses='button_seagreen-black portfolio__button' />
+                    <Button title='UI/UX DESIGN' addClasses='button_seagreen-black portfolio__button' />
+                    <Button title='MOCKUPS' addClasses='button_seagreen-black portfolio__button' />
                 </div>
                 <ul className='portfolio__list' id='portfolio__list'>
                     {[...this.genItems()]}
                 </ul>
-                <button className='portfolio__show-all' onClick={this.showOrHide}>
-                    {this.state.all ? 'HIDE' : 'SHOW ALL'}
-                </button>
+                <Button title={this.state.all ? 'HIDE' : 'SHOW ALL'}
+                        addClasses='button_seagreen portfolio__button portfolio__show-all'
+                        clickFunction={this.showOrHide.bind(this)} />
             </div>
         )
     }

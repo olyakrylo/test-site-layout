@@ -1,5 +1,6 @@
 @import '../../../sass/variables'
 @import '../../../sass/mixins'
+@import './Item/item'
 
 .services
     background-color: #e4fdf9
@@ -21,40 +22,6 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
     grid-gap: 30px
 
-    @media (max-aspect-ratio: 1/1)
+    @media (max-height: 700px)
         grid-template-columns: repeat(auto-fit, minmax(70vw, 1fr))
-
-    > li
-        background-color: white
-        padding: 50px
-        @include flex(center, center, $direction: column)
-        
-        transition: 500ms
-        @include smallDescr (inherit)
-
-        &:hover
-            background-color: $seaGreen
-            color: white
-            box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.25)
-            border-color: white
-
-        > button
-            @include font (17px, bold, inherit)
-            margin-top: 50px
-            min-height: 50px
-            width: auto
-            padding: 0 15px
-            border: 2px solid black
-            border-radius: 0
-            background-color: transparent
-            border-color: inherit
-            &:hover
-                cursor: pointer
-        
-.service__item
-    width: 80px
-    height: 80px
-    z-index: 1
-    font-size: 50px
-    @include flex(center, center)
     

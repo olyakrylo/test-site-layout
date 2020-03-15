@@ -1,0 +1,37 @@
+@import '../../../../sass/variables'
+@import '../../../../sass/mixins'
+    
+.infoblock
+    background-color: white
+    padding: 50px
+    @include flex(center, center, $direction: column)
+    
+    transition: 500ms
+    @include smallDescr (inherit)
+
+    max-width: 300px
+
+    &:hover
+        background-color: $seaGreen
+        color: white
+        box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.25)
+        border-color: white
+
+.infoblock__button
+    @include font (17px, bold, inherit)
+    margin-top: 50px
+    width: auto
+    height: 50px
+    border: 2px solid black
+    padding: 0 15px 
+    border-color: inherit 
+    background-color: transparent
+    &:hover
+        cursor: pointer
+        
+.infoblock__icon
+    width: 80px
+    height: 80px
+    z-index: 1
+    font-size: 50px
+    @include flex(center, center)
