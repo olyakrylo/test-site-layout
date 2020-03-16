@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../../../css/style.css'
-import TeamMember from './TeamMember/TeamMember'
+import Card from './Card/Card'
 import teamInfo from '../teamInfo'
 
 export default function InfoBlock(props) {
@@ -8,10 +8,10 @@ export default function InfoBlock(props) {
     let start = props.num * 3
     let members = teamInfo.members.slice(start, start + 3)
 
-    function * genMembers() {
+    function* genMembers() {
         for(let i = 0; i < members.length; ++i) {
             yield (
-                <TeamMember 
+                <Card
                     img={members[i].img} 
                     name={members[i].name} 
                     position={members[i].position} 
@@ -21,10 +21,9 @@ export default function InfoBlock(props) {
         }
     }
     
-    let id = 'photo-block-' + props.num
-    let className = 'team__content animated fadeIn ' + (props.hidden ? 'team__content_hidden' : '')
     return (
-        <div id={id} className={className}>
+        <div id={'photo-block-' + props.num} 
+             className={'team__content animated fadeIn ' + (props.hidden ? 'team__content_hidden' : '')}>
             {[...genMembers()]}
         </div>
     )

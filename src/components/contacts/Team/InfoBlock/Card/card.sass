@@ -1,0 +1,32 @@
+@import '../../../../../sass/variables'
+@import '../../../../../sass/mixins'
+    
+.person-card
+    min-width: 250px
+    min-height: 50px
+
+    @include flex(space-between, center, column)
+    
+    margin: 10px
+
+    @media (max-width: 700px)
+        width: 100%
+        &:nth-child(2)
+            margin: 20px 0
+
+    img
+        width: 100%
+        height: auto
+        border-radius: 10px
+
+.person-card__info
+    @include smallDescr
+
+.person-card__name
+    margin: 20px 0 8px 0
+
+.person-card__socials
+    margin-top: 20px
+    @include flex(center, center)
+    width: 100%
+    margin-bottom: 50px
