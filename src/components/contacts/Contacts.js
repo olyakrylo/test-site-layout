@@ -1,6 +1,6 @@
 import React from 'react'
 import Team from './Team/Team'
-import ContactsBlock from './ContactsBlock/ContactsBlock'
+import Feedback from './Feedback/Feedback'
 
 export default class Contacts extends React.Component {
     componentDidMount() {
@@ -24,12 +24,7 @@ export default class Contacts extends React.Component {
         return(
             <div className='contacts-container'>
                 <Team />
-                <ContactsBlock />
-                {/* <div className='pop-up'>
-                    <div className='pop-up__body'>
-                        Heh
-                    </div>
-                </div> */}
+                <Feedback />
             </div>
         )
     }
