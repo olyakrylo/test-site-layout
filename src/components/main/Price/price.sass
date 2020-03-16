@@ -1,5 +1,6 @@
 @import '../../../sass/variables'
 @import '../../../sass/mixins'
+@import './Item/item'
 
 .price
     width: 100%
@@ -25,85 +26,7 @@
     @media (max-aspect-ratio: 1/1)
         grid-template-columns: repeat(auto-fit, minmax(70vw, 1fr))
 
-    > li
-        min-width: 300px
-        width: 30%
-
-        &:nth-child(2)
-            margin: 20px 10px
-
-        @media (max-aspect-ratio: 1/1)
-            width: 80%
-            min-width: 250px
-            &:nth-child(2)
-                margin: 50px 0
-
-        display: grid
-        grid-template-columns: repeat(4, 1fr)
-        grid-template-rows: repeat(22, minmax(25px, max-content))
-        grid-gap: 5px
-
-        @media (max-aspect-ratio: 1/1)
-            grid-template-rows: repeat(22, minmax(20px, max-content))
-
-        background-color: white
-        transition: .4s
-
-        &:hover
-            box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.1)
-
-.tariff
-    width: 100%
-    grid-column: 1 / 5
-    grid-row: 1 / 8
-    background-color: #3949ab
-    mask: url('../media/svg/Frame.svg') bottom left / cover
-    @include flex(center, center, $direction: column)
-
-    text-align: center
-    justify-self: center
-    
-    h2
-        margin-top: 0
-        margin-bottom: 0
-        @include font (25px, normal, white, $letterS: 0.5px)
-    p
-        @include font (15px, normal, white, $letterS: 0.5px)
-        span
-            font-size: 50px
-            sup
-                font-size: 25px
-
-.tariff__features
-    grid-column: 2 / 4
-    grid-row: 8 / 17
-    @include flex(space-between, center, column)
-    @include list 
-    margin-top: 40px
-
-    > li
-        text-align: center
-        @include font(15px, normal, $letterS: 0.5px)
-        border-bottom: 2px solid #bfe2de
-        width: 100%
-        padding-bottom: 10px
-
-.tariff__order-button
-    grid-column: 2 / 4
-    grid-row: 17 / 23
-    align-self: center
-
-    @include font (17px, $semibold, $letterS: 1px)    
-    @include buttonTemplate($bgColor: transparent, $border: 2px solid black)
-
-    transition: .4s
-
-    &:hover
-        cursor: pointer
-        color: white
-        background-color: $seaGreen
-        border: none
-    
-    
-    
-        
+.price__item
+    width: 30%
+    @media (max-width: 700px)
+        width: 80%

@@ -1,5 +1,6 @@
 @import '../../../sass/variables'
 @import '../../../sass/mixins'
+@import './Item/item'
 
 #blog
     width: 100%
@@ -25,54 +26,44 @@
             margin: 0
         
 
-.blog-item
-    @include flex(space-between, center)
+// .blog-item
+//     @include flex(space-between, center)
 
-    img, .blog-item__content
-        width: 49%
+//     img, .blog-item__content
+//         width: 49%
 
-    @media (max-width: 750px)
-        flex-direction: column
-        img, .blog-item__content
-            width: 100%
+//     @media (max-width: 750px)
+//         flex-direction: column
+//         img, .blog-item__content
+//             width: 100%
 
-.blog-item__content
-    align-self: flex-start
-    margin-top: 40px
+// .blog-item__content
+//     align-self: flex-start
+//     margin-top: 40px
 
-    @media (max-width: 750px)
-        margin: 0 0 0 0
+//     @media (max-width: 750px)
+//         margin: 0 0 0 0
             
-    h3
-        @include font (20px, $semibold, $letterS: 0.5px)
-        transition: .3s
-        &:hover
-            color: $seaGreen
-            cursor: pointer
+//     h3
+//         @include font (20px, $semibold, $letterS: 0.5px)
+//         transition: .3s
+//         &:hover
+//             color: $seaGreen
+//             cursor: pointer
 
-    p
-        @include font (14px, normal, $letterS: 0.5px)
+//     p
+//         @include font (14px, normal, $letterS: 0.5px)
 
-    .blog-item__keys
-        display: flex
-        flex-direction: row
-        p 
-            font-weight: $semibold
-            width: max-content
-            margin: 0 20px 0 0
+//     .blog-item__keys
+//         display: flex
+//         flex-direction: row
+//         p 
+//             font-weight: $semibold
+//             width: max-content
+//             margin: 0 20px 0 0
 
 .blog__button
     grid-column: 3 / 9
     grid-row: 6 / 7
     align-self: center
     justify-self: center
-    @include buttonTemplate(50px, $padding: 0 30px, $bgColor: $seaGreen, $border: none)
-    @include font (17px, $semibold, white, 0.5px)
-
-    transition: .3s
-
-    &:hover
-        cursor: pointer
-        color: black
-        background-color: transparent
-        border: 2px solid $seaGreen

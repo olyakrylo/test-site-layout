@@ -21,11 +21,6 @@
     flex-wrap: wrap
 
 .portfolio__button
-    font-size: 18px !important
-    width: auto !important
-    height: 55px !important
-    padding: 0 20px
-
     margin: 10px 10px
     @media (max-width: 400px)
         margin: 5px 5px
@@ -44,7 +39,7 @@
     grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr))
     grid-gap: 30px
 
-    @media (max-aspect-ratio: 1/1)
+    @media (max-width: 700px)
         grid-template-columns: repeat(auto-fit, minmax(70vw, 1fr))
 
 .portfolio__show-all

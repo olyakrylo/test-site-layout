@@ -1,8 +1,9 @@
 import React from 'react'
 import '../../../css/style.css'
-import BlogItem from './BlogItem/BlogItem'
+import Item from './Item/Item'
 import blogInfo from './blogInfo'
 import Title from '../../lib/title/Title'
+import Button from '../../lib/button/Button'
 
 export default class Blog extends React.Component {
     componentDidMount() {
@@ -21,7 +22,7 @@ export default class Blog extends React.Component {
     * genBlogItems() {  
         let items = blogInfo.blogItems;
         for (let i = 0; i < this.state.showingItems; ++i) {
-            yield (<BlogItem info={items[i]} key={`blog-item-${i}`} />);
+            yield (<Item info={items[i]} key={`blog-item-${i}`} />);
         }
     }
 
@@ -33,16 +34,20 @@ export default class Blog extends React.Component {
     }
 
     render() {
-        let infoText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
+        let infoText = `Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam,`
         return (
             <div id='blog'>
                 <Title addClass={'blog__info'} name={'Blog'} description={infoText} />
+
                 <ul className='blog__content'>
                     {[...this.genBlogItems()]}
                 </ul>
-                <button className='blog__button' onClick={() => this.showMoreOrHide()}>
-                    {this.state.all ? 'HIDE' : 'MORE VIEW'}
-                </button>
+
+                <Button title={this.state.all ? 'HIDE' : 'MORE VIEW'}
+                        addClasses='blog__button button_small button_seagreen'
+                        clickFunction={this.showMoreOrHide.bind(this)} />
             </div>
         )
     }

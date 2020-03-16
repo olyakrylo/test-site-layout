@@ -42,16 +42,20 @@ export default class Portfolio extends React.Component {
             <div className='portfolio' id='portfolio'>
                 <Title addClass={'portfolio__info'} name={'Latest Works'} description={infoText} />
                 <div className='portfolio__switcher'>
-                    <Button title='ALL' addClasses='button_seagreen-black portfolio__button portfolio__button_selected' />
-                    <Button title='WEB DESIGN' addClasses='button_seagreen-black portfolio__button' />
-                    <Button title='UI/UX DESIGN' addClasses='button_seagreen-black portfolio__button' />
-                    <Button title='MOCKUPS' addClasses='button_seagreen-black portfolio__button' />
+                    <Button title='ALL' 
+                            addClasses='portfolio__button portfolio__button_selected button_seagreen-black button_small' />
+                    <Button title='WEB DESIGN' 
+                            addClasses='portfolio__button button_seagreen-black button_small' />
+                    <Button title='UI/UX DESIGN' 
+                            addClasses='portfolio__button button_seagreen-black button_small' />
+                    <Button title='MOCKUPS' 
+                            addClasses='portfolio__button button_seagreen-black button_small' />
                 </div>
                 <ul className='portfolio__list' id='portfolio__list'>
                     {[...this.genItems()]}
                 </ul>
                 <Button title={this.state.all ? 'HIDE' : 'SHOW ALL'}
-                        addClasses='button_seagreen portfolio__button portfolio__show-all'
+                        addClasses='button_seagreen button_small portfolio__button portfolio__show-all'
                         clickFunction={this.showOrHide.bind(this)} />
             </div>
         )

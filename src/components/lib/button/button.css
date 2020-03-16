@@ -23,6 +23,13 @@
   cursor: pointer;
 }
 
+.button_small {
+  font-size: 18px;
+  width: auto;
+  height: 55px;
+  padding: 0 20px;
+}
+
 .button_white {
   background-color: transparent;
   border: 2px solid white;

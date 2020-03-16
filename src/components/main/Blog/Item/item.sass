@@ -1,0 +1,35 @@
+@import '../../../../sass/variables'
+@import '../../../../sass/mixins'
+
+.blog-item
+    @include flex(space-between, center)
+
+    @media (max-width: 750px)
+        flex-direction: column
+
+.blog-item__content, .blog-item > img
+    width: 49%
+    @media (max-width: 750px)
+        width: 100%
+
+.blog-item__content
+    align-self: flex-start
+    margin-top: 40px
+
+    @media (max-width: 750px)
+        margin: 0
+            
+.blog-item__title
+    @include font (20px, $semibold, $letterS: 0.5px)
+    transition: .3s
+    &:hover
+        color: $seaGreen
+        cursor: pointer
+
+.blog-item__key
+    font-weight: $semibold
+    width: max-content
+    margin: 0 20px 0 0
+
+.blog-item__description
+    @include font (14px, normal, $letterS: 0.5px)

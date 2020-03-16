@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../../css/style.css'
-import PriceItem from './PriceItem/PriceItem'
+import Item from './Item/Item'
 import tariffs from './tariffs'
 import Title from '../../lib/title/Title'
 
@@ -15,7 +15,7 @@ export default class Price extends React.Component {
 
     * genPriceItems() {
         for (let tariff of tariffs.tariffs) {
-            yield (<PriceItem 
+            yield (<Item 
                         name={tariff.name}
                         price={tariff.price}
                         features={tariff.features}
@@ -24,7 +24,9 @@ export default class Price extends React.Component {
     }
 
     render() {
-        let infoText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
+        let infoText = `Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam,`
         return (
             <div className='price'>
                 <Title addClass={'price__info'} name={'Pricing Plan'} description={infoText} />
@@ -32,6 +34,7 @@ export default class Price extends React.Component {
                     {[...this.genPriceItems()]}
                 </ul>
             </div>
+            
         )
     }
 }
