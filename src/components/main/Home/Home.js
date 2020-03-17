@@ -15,7 +15,7 @@ export default class Home extends React.Component {
     }
 
     scrollToItem(id) {
-        document.getElementById(id).scrollIntoView({behavior: "smooth", block: 'start'});
+        document.querySelector(id).scrollIntoView({behavior: "smooth", block: 'start'});
     }
 
     render() {
@@ -30,7 +30,7 @@ export default class Home extends React.Component {
                     <FontAwesomeIcon 
                         className="home__angle" 
                         icon={faAngleDown}
-                        onClick={() => this.scrollToItem('about')} />
+                        onClick={() => this.scrollToItem('#about')} />
                 </div>
             </div>
         );

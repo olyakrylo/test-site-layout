@@ -19,7 +19,7 @@ export default function Popup({addClass, isRight, text, isShowing, closePopup}) 
             <div className='popup__close' onClick={close}>
                 <FontAwesomeIcon icon={faTimes} />
             </div>
-            <p>
+            <p className='popup__text'> 
                 {text}
             </p>
         </div>

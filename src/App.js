@@ -24,7 +24,7 @@ class App extends React.Component {
     } 
 
     arrowVisibility() {
-        let element = document.getElementById('home') || document.getElementById('team')
+        let element = document.querySelector('#home') || document.querySelector('#team')
 
         let targetPosition = {
             top: window.pageYOffset + element.getBoundingClientRect().top,
@@ -42,14 +42,14 @@ class App extends React.Component {
         if (targetPosition.bottom > windowPosition.top && 
             targetPosition.top < windowPosition.bottom) { 
 
-            document.getElementById('up-arrow').style.display = 'none';
+            document.querySelector('#up-arrow').style.display = 'none';
         } else {
-            document.getElementById('up-arrow').style.display = 'flex';
+            document.querySelector('#up-arrow').style.display = 'flex';
         };
     }
 
     render() {
-      let scrollUp = () => document.getElementById('root').scrollIntoView({behavior: 'smooth', block: "start"});
+      let scrollUp = () => document.querySelector('#root').scrollIntoView({behavior: 'smooth', block: "start"});
       return (
           <div>
               <Header setScreen={this.setScreen}/>

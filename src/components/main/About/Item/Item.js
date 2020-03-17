@@ -2,7 +2,7 @@ import React from 'react'
 import '../../../../css/style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default function AboutItem(props) {
+export default function Item(props) {
     return(
         <li className='about-item'>
             <div className='about-item__img'>

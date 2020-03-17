@@ -29,7 +29,7 @@ export default class ItemList extends React.Component {
         let elemId = e.currentTarget.id.substring(5)
             
         try {
-            let elem = document.getElementById(elemId);
+            let elem = document.querySelector(`#${elemId}`);
             elem.scrollIntoView({behavior: "smooth", block: "start"});
         } catch (err) {
             console.log('go home')

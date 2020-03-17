@@ -12,14 +12,14 @@ export default class Form extends React.Component {
     };
 
     sendForm = e => {
-        let name = document.getElementById('form-name').value;
-        let email = document.getElementById('form-email').value;
-        let message = document.getElementsByTagName('textarea')[0].value
+        let name = document.querySelector('.contacts-form__name').value;
+        let email = document.querySelector('.contacts-form__email').value;
+        let message = document.querySelector('.contacts-form__message').value
         if (name && email && message) {
             this.setState({
-                name: document.getElementById('form-name').value,
-                email: document.getElementById('form-email').value,
-                message: document.getElementsByTagName('textarea')[0].value,
+                name: name,
+                email: email,
+                message: message,
                 isInfoFilled: true
             });
         } else {
@@ -32,14 +32,14 @@ export default class Form extends React.Component {
     setPopupText = () => {
         if (this.state.name) {
             return (
-                <p>
+                <span>
                     name: {this.state.name} <br />
                     email: {this.state.email} <br />
                     text: {this.state.message}
-                </p>
+                </span>
             )
         } else {
-            return <p>type anything!</p>
+            return <span>type anything!</span>
         }
     }
 
@@ -53,13 +53,11 @@ export default class Form extends React.Component {
                 <div className='contacts-form__userinfo'>
                     <input className='contacts-form__name' 
                            type='text' 
-                           placeholder='Your NAME' 
-                           id='form-name'>
+                           placeholder='Your NAME'>
                     </input>
                     <input className='contacts-form__email' 
                            type='text' 
-                           placeholder='Your Email' 
-                           id='form-email'>
+                           placeholder='Your Email'>
                     </input>
                 </div>
 

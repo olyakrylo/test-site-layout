@@ -31,7 +31,7 @@ export default class Portfolio extends React.Component {
 
     showOrHide = () => {
         if (this.state.all) {
-            document.getElementById('portfolio').scrollIntoView({behavior: "smooth", block: "center"});
+            document.querySelector('#portfolio').scrollIntoView({behavior: "smooth", block: "center"});
         }
         this.setState({all: !this.state.all})
     }

@@ -5,20 +5,20 @@ export default function BlockSwitcher({amount, setBlock}) {
 
     function changePhotoBlock(reqBlock, amount) {
         for(let i = 0; i < amount; ++i) {
-            let blockId = 'photo-block-' + i
-            let circleId = 'circle-' + i
+            let block = document.querySelector(`#photo-block-${i}`);
+            let circle = document.querySelector(`#circle-${i}`);
 
             if (i === reqBlock) {
-                document.getElementById(blockId).classList.remove('team__content_hidden')
-                document.getElementById(circleId).classList.add('block-switcher__item_active')
+                block.classList.remove('team__content_hidden')
+                circle.classList.add('block-switcher__item_active')
             } else {
-                document.getElementById(blockId).classList.add('team__content_hidden')
-                document.getElementById(circleId).classList.remove('block-switcher__item_active')
+                block.classList.add('team__content_hidden')
+                circle.classList.remove('block-switcher__item_active')
             }
         }
         
         setBlock(reqBlock);
-        document.getElementById('photo-block-' + reqBlock).scrollIntoView({behavior: 'smooth', block: 'center'});
+        document.querySelector(`#photo-block-${reqBlock}`).scrollIntoView({behavior: 'smooth', block: 'center'});
     }
 
     function * genCircles(amount) {

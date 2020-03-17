@@ -10,14 +10,15 @@ export default class Buttons extends React.Component {
 
     togglePopup() {
         if (this.state.isPopupShowing) {
+            let popup = document.querySelector('.home-buttons__popup');
+            popup.classList.add('rollOut');
+
             let handler = () => {
                 popup.removeEventListener('animationend', handler);
                 popup.classList.remove('rollOut');
                 this.setState({ isPopupShowing: false });
             };
             
-            let popup = document.getElementsByClassName('popup')[0];
-            popup.classList.add('rollOut');
             popup.addEventListener('animationend', handler)
         } else {
             this.setState({ isPopupShowing: true });
@@ -30,12 +31,12 @@ export default class Buttons extends React.Component {
                 <div className="home-buttons__container">
                     <Button title='OUR SERVICES' 
                             addClasses='button_white' 
-                            clickFunction={() => this.props.scrollToItem('services')} />
+                            clickFunction={() => this.props.scrollToItem('#services')} />
                 </div>
                 <div className="home-buttons__container">
                     <Popup addClass={'home-buttons__popup'}
                            isRight={true}
-                           text={'hire is now))'}
+                           text={<span>hire is now))</span>}
                            isShowing={this.state.isPopupShowing}
                            closePopup={this.togglePopup.bind(this)} />
                     <Button title='HIRE IS NOW'

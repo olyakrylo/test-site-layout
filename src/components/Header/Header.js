@@ -7,10 +7,10 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 export default class Header extends React.Component {
 
     openOrCloseMenu = () => {
-        document.getElementById('menu').classList.toggle('header__menu_show');
+        document.querySelector('#menu').classList.toggle('header__menu_show');
 
-        document.getElementById('burger').classList.toggle('header__bar_hidden');
-        document.getElementById('cross').classList.toggle('header__bar_hidden');
+        document.querySelector('#burger').classList.toggle('header__bar_hidden');
+        document.querySelector('#cross').classList.toggle('header__bar_hidden');
     }
 
     render() {

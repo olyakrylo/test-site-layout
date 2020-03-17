@@ -9,7 +9,7 @@ import Blog from './Blog/Blog'
 
 export default class Main extends React.PureComponent {
     componentDidMount() {
-        document.getElementById(this.props.screenId).scrollIntoView({block: 'center', behavior: "smooth"});
+        document.querySelector(`#${this.props.screenId}`).scrollIntoView({block: 'center', behavior: "smooth"});
 
         window.addEventListener('scroll', this.props.arrowVisibility);
         this.props.arrowVisibility()
@@ -19,9 +19,9 @@ export default class Main extends React.PureComponent {
         window.removeEventListener('scroll', this.props.arrowVisibility);
     }
 
-    colorHeaderItems(id) {
-        let element = document.getElementById(id);
-        let headerElement = document.getElementById('menu-' + id + '-link');
+    colorHeaderItems(idName) {
+        let element = document.querySelector(`#${idName}`);
+        let headerElement = document.querySelector(`#menu-${idName}-link`);
 
         let targetPosition = {
             top: window.pageYOffset + element.getBoundingClientRect().top,
