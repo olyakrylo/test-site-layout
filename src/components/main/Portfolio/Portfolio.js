@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../../css/style.css'
 import Item from './Item/Item'
+import Switcher from './Switcher/Switcher'
 import portfolioInfo from './portfolioInfo'
 import Title from '../../lib/title/Title'
 import Button from '../../lib/button/Button'
@@ -41,7 +42,7 @@ export default class Portfolio extends React.Component {
         return (
             <div className='portfolio' id='portfolio'>
                 <Title addClass={'portfolio__info'} name={'Latest Works'} description={infoText} />
-                <div className='portfolio__switcher'>
+                {/* <div className='portfolio__switcher'>
                     <Button title='ALL' 
                             addClasses='portfolio__button portfolio__button_selected button_seagreen-black button_small' />
                     <Button title='WEB DESIGN' 
@@ -50,7 +51,8 @@ export default class Portfolio extends React.Component {
                             addClasses='portfolio__button button_seagreen-black button_small' />
                     <Button title='MOCKUPS' 
                             addClasses='portfolio__button button_seagreen-black button_small' />
-                </div>
+                </div> */}
+                <Switcher />
                 <ul className='portfolio__list' id='portfolio__list'>
                     {[...this.genItems()]}
                 </ul>

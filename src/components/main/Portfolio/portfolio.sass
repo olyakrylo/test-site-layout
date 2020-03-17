@@ -1,6 +1,7 @@
 @import '../../../sass/variables'
 @import '../../../sass/mixins'
 @import './Item/item'
+@import './Switcher/switcher'
     
 .portfolio
     background-color: white
@@ -13,22 +14,22 @@
     grid-column: 2 / 10
     grid-row: 2 / 3
 
-.portfolio__switcher
-    grid-column: 2 / 10
-    grid-row: 4 / 5
+// .portfolio__switcher
+//     grid-column: 2 / 10
+//     grid-row: 4 / 5
 
-    @include flex(center, center)
-    flex-wrap: wrap
+//     @include flex(center, center)
+//     flex-wrap: wrap
 
-.portfolio__button
-    margin: 10px 10px
-    @media (max-width: 400px)
-        margin: 5px 5px
+// .portfolio__button
+//     margin: 10px 10px
+//     @media (max-width: 400px)
+//         margin: 5px 5px
 
-.portfolio__button_selected
-    color: $seaGreen !important
-    &:hover
-        color: white !important
+// .portfolio__button_selected
+//     color: $seaGreen !important
+//     &:hover
+//         color: white !important
 
 .portfolio__list
     grid-column: 2 / 10

@@ -1,0 +1,21 @@
+@import '../../../../sass/mixins'
+@import '../../../../sass/variables'
+    
+.portfolio__switcher
+    grid-column: 2 / 10
+    grid-row: 4 / 5
+
+    @include flex(center, center)
+    flex-wrap: wrap
+
+.portfolio__button
+    margin: 10px 10px
+    @media (max-width: 400px)
+        margin: 5px 5px
+    
+    &:hover
+        color: black !important
+        background-color: transparent !important
+
+.portfolio__button_selected, .portfolio__button_selected:hover
+    color: $seaGreen !important
