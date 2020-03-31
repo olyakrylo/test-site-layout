@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.29ebd15e.chunk.css",
-    "main.js": "/static/js/main.f3681e89.chunk.js",
-    "main.js.map": "/static/js/main.f3681e89.chunk.js.map",
+    "main.css": "/static/css/main.7e1db762.chunk.css",
+    "main.js": "/static/js/main.673114bc.chunk.js",
+    "main.js.map": "/static/js/main.673114bc.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.a9cfd7eb.js",
     "runtime-main.js.map": "/static/js/runtime-main.a9cfd7eb.js.map",
     "static/js/2.1237f1ba.chunk.js": "/static/js/2.1237f1ba.chunk.js",
     "static/js/2.1237f1ba.chunk.js.map": "/static/js/2.1237f1ba.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.81a29f8f2bc294687599eb911d38b698.js": "/precache-manifest.81a29f8f2bc294687599eb911d38b698.js",
+    "precache-manifest.03bbb7fb724556f16702d3670bb84953.js": "/precache-manifest.03bbb7fb724556f16702d3670bb84953.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.29ebd15e.chunk.css.map": "/static/css/main.29ebd15e.chunk.css.map",
+    "static/css/main.7e1db762.chunk.css.map": "/static/css/main.7e1db762.chunk.css.map",
     "static/js/2.1237f1ba.chunk.js.LICENSE.txt": "/static/js/2.1237f1ba.chunk.js.LICENSE.txt",
     "static/media/style.css": "/static/media/Web-Development-Project.f7bff757.jpg",
     "static/media/index.css": "/static/media/OpenSans-SemiBold.ba5cde21.ttf"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.a9cfd7eb.js",
     "static/js/2.1237f1ba.chunk.js",
-    "static/css/main.29ebd15e.chunk.css",
-    "static/js/main.f3681e89.chunk.js"
+    "static/css/main.7e1db762.chunk.css",
+    "static/js/main.673114bc.chunk.js"
   ]
 }

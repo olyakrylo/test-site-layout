@@ -39,6 +39,9 @@
     @if $direction != row
         flex-direction: $direction
 
+    @if $justify == space-evenly
+        justify-content: space-around
+
 @mixin blockGrid($columns, $rows)
     display: grid
     grid-template-columns: repeat($columns, 1fr)
