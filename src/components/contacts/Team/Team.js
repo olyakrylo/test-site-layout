@@ -17,7 +17,7 @@ export default class Team extends React.Component {
         let blocksAmount = Math.ceil(teamInfo.members.length / 3);
         let carousel = document.querySelector('.team__carousel');
         carousel.addEventListener('touchstart', (e) => {
-            let { currentBlock } = this.state
+            let { currentBlock } = this.state;
             let startX = e.changedTouches[0].clientX;
 
             let touchEnd = e => {
