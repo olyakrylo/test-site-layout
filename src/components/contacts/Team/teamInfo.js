@@ -37,7 +37,7 @@ export default
         {
             "name": "Not John Doe",
             "position": "General Manager",
-            "img": "Doe.jpg",
+            "img": "Biru.jpg",
             "links": {
                 "facebook": "",
                 "twitter": "",
@@ -48,7 +48,7 @@ export default
         {
             "name": "Not Alexa Biru",
             "position": "Office Director",
-            "img": "Biru.jpg",
+            "img": "Sing.jpg",
             "links": {
                 "facebook": "",
                 "twitter": "",
@@ -59,7 +59,7 @@ export default
         {
             "name": "Not Ronobir Sing",
             "position": "Admin",
-            "img": "Sing.jpg",
+            "img": "Doe.jpg",
             "links": {
                 "facebook": "",
                 "twitter": "",
@@ -70,7 +70,7 @@ export default
         {
             "name": "Not Not John Doe",
             "position": "General Manager",
-            "img": "Doe.jpg",
+            "img": "Sing.jpg",
             "links": {
                 "facebook": "",
                 "twitter": "",
@@ -81,6 +81,17 @@ export default
         {
             "name": "Not Not Alexa Biru",
             "position": "Office Director",
+            "img": "Doe.jpg",
+            "links": {
+                "facebook": "",
+                "twitter": "",
+                "messenger": "",
+                "sthElse": ""
+            }
+        },
+        {
+            "name": "Not Not Ronobir Sing",
+            "position": "Admin",
             "img": "Biru.jpg",
             "links": {
                 "facebook": "",
@@ -89,16 +100,5 @@ export default
                 "sthElse": ""
             }
         }
-        // {
-        //     "name": "Not Not Ronobir Sing",
-        //     "position": "Admin",
-        //     "img": "Sing.jpg",
-        //     "links": {
-        //         "facebook": "",
-        //         "twitter": "",
-        //         "messenger": "",
-        //         "sthElse": ""
-        //     }
-        // }
     ]
 }

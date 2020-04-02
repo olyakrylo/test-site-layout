@@ -1,6 +1,6 @@
 @import '../../../sass/variables'
 @import '../../../sass/mixins'
-@import './InfoBlock/Card/card'
+@import './Card/card'
 @import './BlockSwitcher/block-switcher'
 
 .team
@@ -15,17 +15,20 @@
     grid-column: 2 / 10
     grid-row: 3 / 4
 
-.team__content
+.team__carousel-container
     grid-column: 2 / 10
     grid-row: 5 / 6
+    width: 80vw
+    overflow: hidden
+    // padding: 0
 
-    @include flex(space-evenly, center)
-    flex-wrap: wrap
+.team__carousel
+    @include list
+    width: max-content
+    margin-left: 0
+    transition: margin-left .5s ease-in-out
 
-.team__person-card
-    width: 30%
-
-.team__content_hidden
-    display: none
+    @media ( max-width: 500px )
+        width: 240vw
 
         

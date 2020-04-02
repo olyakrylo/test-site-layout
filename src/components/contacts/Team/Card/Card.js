@@ -1,8 +1,8 @@
 import React from 'react'
-import '../../../../../css/style.css'
+import '../../../../css/style.css'
 import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faComments, faBullseye } from '@fortawesome/free-solid-svg-icons'
-import SocialLink from '../../../../lib/socialLink/SocialLink'
+import SocialLink from '../../../lib/socialLink/SocialLink'
 
 export default function Card(props) {
 
@@ -22,9 +22,9 @@ export default function Card(props) {
         }
     }
 
-    let imgPath = 'img/' + props.img
+    let imgPath = './img/' + props.img
     return (
-        <div className='team__person-card person-card'>
+        <li className='team__person-card person-card'>
             <img src={imgPath} alt=''/>
 
             <div className='person-card__info'>
@@ -35,7 +35,6 @@ export default function Card(props) {
             <div className='person-card__socials'>
                 {[...socialIcons(props.links)]}
             </div>
-
-        </div>
+        </li>
     )
 }
