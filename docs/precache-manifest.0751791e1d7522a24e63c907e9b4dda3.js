@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6ccf11772f305b5f74f48a96ad989f48",
+    "revision": "95d62da5b19cb55f3d53462ea820b6f9",
     "url": "/index.html"
   },
   {
-    "revision": "2aff994f66c8170152b6",
-    "url": "/static/css/main.c3e25e02.chunk.css"
+    "revision": "f4c41d06e0bbf21f9e0b",
+    "url": "/static/css/main.a00854ef.chunk.css"
   },
   {
     "revision": "f093acc066204f6ed593",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.1237f1ba.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2aff994f66c8170152b6",
-    "url": "/static/js/main.0c1bb8f4.chunk.js"
+    "revision": "f4c41d06e0bbf21f9e0b",
+    "url": "/static/js/main.1a905738.chunk.js"
   },
   {
     "revision": "1b6ea25f0ad2d380f6a9",
@@ -32,19 +32,19 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/Frame.03544b56.svg"
   },
   {
-    "revision": "1025a6e0fb0fa86f17f57cc82a6b9756",
-    "url": "/static/media/OpenSans-Bold.1025a6e0.ttf"
-  },
-  {
-    "revision": "3ed9575dcc488c3e3a5bd66620bdf5a4",
-    "url": "/static/media/OpenSans-Regular.3ed9575d.ttf"
-  },
-  {
-    "revision": "ba5cde21eeea0d57ab7efefc99596cce",
-    "url": "/static/media/OpenSans-SemiBold.ba5cde21.ttf"
-  },
-  {
     "revision": "f7bff757e85e33e2233d5ef9d96c8918",
     "url": "/static/media/Web-Development-Project.f7bff757.jpg"
+  },
+  {
+    "revision": "811c8baeca3bb3329488f729979c1fbc",
+    "url": "/static/media/opensans.811c8bae.woff"
+  },
+  {
+    "revision": "6f05808b4f6a11d3feb1716291c7c038",
+    "url": "/static/media/opensansbold.6f05808b.woff"
+  },
+  {
+    "revision": "299b3be898e809232985246037e615b9",
+    "url": "/static/media/opensanssemibold.299b3be8.woff"
   }
 ]);
