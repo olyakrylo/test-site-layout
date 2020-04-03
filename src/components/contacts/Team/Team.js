@@ -8,7 +8,9 @@ import Card from './Card/Card'
 export default class Team extends React.Component {
     state = { 
         currentBlock: 0,
-        blocksAmount: Math.ceil(teamInfo.members.length / 3)
+        blocksAmount: document.documentElement.clientWidth <= 500
+                      ? teamInfo.members.length
+                      : Math.ceil(teamInfo.members.length / 3)
     }
 
     setBlock(num) {
@@ -18,48 +20,38 @@ export default class Team extends React.Component {
     componentDidMount() {
         let { blocksAmount } = this.state;
         let carousel = document.querySelector('.team__carousel');
-        carousel.addEventListener('touchstart', (e) => {
+        carousel.addEventListener('touchstart', e => {
             carousel.style.transition = 'none';
             let startX = e.changedTouches[0].clientX;
             let margin = Math.abs(parseFloat(getComputedStyle(carousel).marginLeft));
             let width = parseFloat(getComputedStyle(carousel).width);
+            let {currentBlock} = this.state
 
-            let move = e => {
+            let touchMove = e => {
                 let x = e.changedTouches[0].clientX;
-                let resMargin = -margin + x - startX;
-                let minMargin = width * (1 - 1 / blocksAmount);
-                if (resMargin >= 0) {
-                    carousel.style.marginLeft = '0px';
-                } else if (resMargin <= -minMargin) {
-                    carousel.style.marginLeft = `-${minMargin}px`;
-                } else {
-                    carousel.style.marginLeft = `${resMargin}px`
-                }
+                carousel.style.marginLeft = `${-margin + x - startX}px`;
             }
-
-            let touchEnd = () => {
-                let resMargin = Math.abs(parseFloat(getComputedStyle(carousel).marginLeft));
-                let checkPoints = [];
-                for (let i = 0; i < blocksAmount; ++i) {
-                    checkPoints[i] = i * width / blocksAmount;
-                }
-                let minDiff = 10000;
-                let closestMargin = 0;
-                let blockIndex = 0;
-                checkPoints.forEach((elem, i) => {
-                    let diff = Math.abs(resMargin - elem);
-                    if (diff < minDiff) {
-                        minDiff = diff;
-                        closestMargin = elem;
-                        blockIndex = i;
-                    }
-                })
-                carousel.style.transition = 'margin-left .2s ease-out';
-                carousel.style.marginLeft = `${-closestMargin}px`
-                this.setBlock(blockIndex);
+            
+            let checkPoints = [];
+            for (let i = 0; i < blocksAmount; ++i) {
+                checkPoints[i] = i * width / blocksAmount;
             }
+            let max = checkPoints[blocksAmount - 1];
 
-            carousel.addEventListener('touchmove', move);
+            let touchEnd = e => {
+                let endX = e.changedTouches[0].clientX;
+                carousel.style.transition = 'margin-left .3s ease-out';
+                if (startX - endX > 40) {
+                    carousel.style.marginLeft = `-${checkPoints[currentBlock + 1] || max}px`;
+                    currentBlock = Math.min(currentBlock + 1, blocksAmount - 1);
+                } else if (endX - startX > 40) {
+                    carousel.style.marginLeft = `-${checkPoints[currentBlock - 1] || 0}px`;
+                    currentBlock = Math.max(currentBlock - 1, 0);
+                }
+                this.setBlock(currentBlock);
+                carousel.removeEventListener('touchend', touchEnd);
+            }
+            carousel.addEventListener('touchmove', touchMove);
             carousel.addEventListener('touchend', touchEnd);
         })
     }

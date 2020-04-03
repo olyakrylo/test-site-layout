@@ -7,8 +7,12 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 export default class Header extends React.Component {
 
     openOrCloseMenu = () => {
+        if (document.documentElement.clientWidth > 900) return;
+        
+        let bar = document.querySelector('.header__bar_hidden');
+        let header = document.querySelector('.header');
+        header.style.height = bar.id === 'cross' ? '290px' : '70px';
         document.querySelector('#menu').classList.toggle('header__menu_show');
-
         document.querySelector('#burger').classList.toggle('header__bar_hidden');
         document.querySelector('#cross').classList.toggle('header__bar_hidden');
     }
@@ -29,9 +33,7 @@ export default class Header extends React.Component {
                         icon={faTimes} 
                         onClick={() => this.openOrCloseMenu()} />
                 </div>
-                {/* <div id='item-list' className='item-list animated slideInDown' style={{backgroundColor: 'red'}}> */}
-                    <ItemList openOrCloseMenu={this.openOrCloseMenu} setScreen={this.props.setScreen}/>
-                {/* </div> */}
+                <ItemList openOrCloseMenu={this.openOrCloseMenu} setScreen={this.props.setScreen}/>
             </div>
         );
     }

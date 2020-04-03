@@ -11,11 +11,11 @@ export default function BlockSwitcher({amount, currentBlock, setBlock}) {
 
     function * genCircles(amount) {
         for(let i = 0; i < amount; ++i) {
-            let cx = (i * 30 + 10).toString();
+            let cx = (i * 22.5 + 7.5).toString();
             yield (
                 <circle id={'circle-' + i}
                     className={'block-switcher__item ' + (i === currentBlock ? "block-switcher__item_active" : "")} 
-                    cx={cx} cy='10' r='10'
+                    cx={cx} cy='7.5' r='7.5'
                     onClick={() => slide(i)}
                     key={`switcher-item-${i}`} />
             ) 
@@ -24,7 +24,7 @@ export default function BlockSwitcher({amount, currentBlock, setBlock}) {
 
     return (
         <div className='block-switcher'>
-            <svg width={amount * 25} height='20' viewBox={'0 0 ' + (amount * 20 + 20) + ' 20'}>
+            <svg width={amount * 22.5 - 7.5} height='15' viewBox={'0 0 ' + (amount * 22.5 - 7.5) + ' 15'}>
                 {[...genCircles(amount)]}
             </svg>
         </div>

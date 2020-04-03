@@ -4,12 +4,10 @@
 .header
     position: fixed
     width: 100%
-    min-height: 70px
-    height: auto
+    height: 70px
     background-color: white
     @include flex(space-between, center)
     @include font (17px, $semibold, black, 1px)
-    
     z-index: 2
 
 .header__head
@@ -31,14 +29,6 @@
 
 .header__item
     margin-right: 30px
-    // transition: 300ms
-
-    // &:hover
-    //     color: $seaGreen
-    //     cursor: pointer
-
-// .header__item_colored
-//     color: $seaGreen
 
 .header__link
     color: black
@@ -65,35 +55,42 @@
 .header__search_hidden
     display: none
 
-@keyframes slide
-    0%
-        height: 50px
-    100%
-        height: auto
-
 @media (max-width: 900px)
     .header
-        min-height: 50px
+        height: 70px
         flex-direction: column
         align-items: stretch
-        justify-content: center
+        justify-content: flex-start
+        transition: height .5s ease-in-out
 
-        // animation: slide 1s linear
+    .header__head
+        min-height: 70px
 
     .header__menu, .item-list
-        display: none
+        height: 0
+        overflow: hidden
+        transition: height .5s ease-in-out
+        @include list
+        display: block
 
     .header__menu_show
-        @include flex($align: center, $direction: column)
+        height: 220px
+        box-shadow: 0 8px 12px 0 rgba(100, 100, 100, 0.1)
 
-    .header__menu_show > li 
-        margin-bottom: 15px
+    .header__item
+        margin: 12px 0 !important
+        text-align: center
+        &:first-child
+            margin-top: 0 !important
 
     .header__bar 
         display: inline
         font-size: 25px
         margin-right: 15vw
         animation-duration: 1s
+
+        &:hover
+            cursor: pointer
 
     .header__bar_hidden
         display: none !important

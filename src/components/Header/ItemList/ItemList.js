@@ -32,7 +32,6 @@ export default class ItemList extends React.Component {
             let elem = document.querySelector(`#${elemId}`);
             elem.scrollIntoView({behavior: "smooth", block: "start"});
         } catch (err) {
-            console.log('go home')
             this.props.setScreen(elemId)
         }
         this.props.openOrCloseMenu();
@@ -40,7 +39,7 @@ export default class ItemList extends React.Component {
 
     render() {
         return(
-            <ul className='header__menu animated fadeInDown' id='menu' >
+            <ul className='header__menu' id='menu' >
                 {this.menuItem('Home', 'menu-home', '/', this.scrollToItem)}
                 {this.menuItem('About', 'menu-about', '/', this.scrollToItem)}
                 {this.menuItem('Servicing', 'menu-services', '/', this.scrollToItem)}
