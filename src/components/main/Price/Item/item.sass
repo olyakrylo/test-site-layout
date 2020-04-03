@@ -2,13 +2,19 @@
 @import '../../../../sass/mixins'
 
 .tariff
-    min-width: 300px
+    // min-width: 350px
 
     &:nth-child(2)
         margin: 20px
 
-    @media (max-width: 700px)
+    // @media ( max-width: 900px )
+    //     // min-width: 280px
+    //     width: 40% !important
+        
+
+    @media (max-width: 500px)
         min-width: 250px
+        // width: 100%
         &:nth-child(2)
             margin: 50px 0
 
@@ -17,8 +23,8 @@
     grid-template-rows: repeat(22, minmax(25px, max-content))
     grid-gap: 5px
 
-    @media (max-height: 900px)
-        grid-template-rows: repeat(22, minmax(20px, max-content))
+    @media (max-width: 900px)
+        grid-template-rows: repeat(22, minmax(17px, max-content))
 
     background-color: white
     transition: .4s
@@ -41,6 +47,8 @@
     margin-top: 0
     margin-bottom: 0
     @include font (25px, normal, white, $letterS: 0.5px)
+    @media ( max-width: 900px )
+        font-size: 20px
 
 .tariff__price
     @include font (15px, normal, white, $letterS: 0.5px)
@@ -55,6 +63,8 @@
     @include flex(space-between, center, column)
     @include list 
     margin-top: 40px
+    @media ( max-width: 900px )
+        margin-top: 25px        
 
 .tariff__feature
     text-align: center

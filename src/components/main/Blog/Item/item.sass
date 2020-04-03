@@ -16,12 +16,16 @@
     align-self: flex-start
     margin-top: 40px
 
-    @media (max-width: 750px)
-        margin: 0
+    @media (max-width: 900px)
+        margin-top: 15px
             
 .blog-item__title
     @include font (20px, $semibold, $letterS: 0.5px)
+    margin-top: 0
     transition: .3s
+
+    @media (max-width: 500px)
+        margin-top: 20px
     &:hover
         color: $seaGreen
         cursor: pointer

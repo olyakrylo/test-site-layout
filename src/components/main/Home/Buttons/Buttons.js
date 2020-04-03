@@ -25,6 +25,10 @@ export default class Buttons extends React.Component {
         }
     }
 
+    closePopup() {
+        this.setState({ isPopupShowing: false });
+    }
+
     render() {
         return (
             <div className="home-buttons">
@@ -38,7 +42,7 @@ export default class Buttons extends React.Component {
                            isRight={true}
                            text={<span>hire is now))</span>}
                            isShowing={this.state.isPopupShowing}
-                           closePopup={this.togglePopup.bind(this)} />
+                           closePopup={this.closePopup.bind(this)} />
                     <Button title='HIRE IS NOW'
                             addClasses='button_seagreen'
                             clickFunction={this.togglePopup.bind(this)} />

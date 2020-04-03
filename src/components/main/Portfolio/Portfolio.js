@@ -18,7 +18,8 @@ export default class Portfolio extends React.Component {
     state = { all: false };
 
     * genItems() {
-        let amount = this.state.all ? portfolioInfo.items.length : 3;
+        let amountInBlock = document.documentElement.clientWidth <= 900 ? 2 : 3;
+        let amount = this.state.all ? portfolioInfo.items.length : amountInBlock;
 
         for (let i = 0; i < amount; ++i) {
             let currItem = portfolioInfo.items[i];
@@ -42,16 +43,6 @@ export default class Portfolio extends React.Component {
         return (
             <div className='portfolio' id='portfolio'>
                 <Title addClass={'portfolio__info'} name={'Latest Works'} description={infoText} />
-                {/* <div className='portfolio__switcher'>
-                    <Button title='ALL' 
-                            addClasses='portfolio__button portfolio__button_selected button_seagreen-black button_small' />
-                    <Button title='WEB DESIGN' 
-                            addClasses='portfolio__button button_seagreen-black button_small' />
-                    <Button title='UI/UX DESIGN' 
-                            addClasses='portfolio__button button_seagreen-black button_small' />
-                    <Button title='MOCKUPS' 
-                            addClasses='portfolio__button button_seagreen-black button_small' />
-                </div> */}
                 <Switcher />
                 <ul className='portfolio__list' id='portfolio__list'>
                     {[...this.genItems()]}

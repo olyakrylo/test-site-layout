@@ -2,8 +2,6 @@
 @import '../../../../sass/mixins'
     
 .person-card
-    // min-width: 250px
-    // min-height: 50px
     width: 24vw
     float: left
     display: inline-block
@@ -14,8 +12,6 @@
     @media (max-width: 500px)
         width: 78vw
         margin: 0 1vw
-        // &:nth-child
-        //     margin: 20px 0
 
     img
         width: 100%
@@ -23,6 +19,11 @@
 
 .person-card__info
     @include smallDescr
+    margin-top: 10px
+
+    @media (max-width: 900px) and (min-width: 500px)
+        h3
+            font-size: 15px
 
 .person-card__name
     margin: 20px 0 8px 0

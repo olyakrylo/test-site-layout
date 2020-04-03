@@ -14,23 +14,6 @@
     grid-column: 2 / 10
     grid-row: 2 / 3
 
-// .portfolio__switcher
-//     grid-column: 2 / 10
-//     grid-row: 4 / 5
-
-//     @include flex(center, center)
-//     flex-wrap: wrap
-
-// .portfolio__button
-//     margin: 10px 10px
-//     @media (max-width: 400px)
-//         margin: 5px 5px
-
-// .portfolio__button_selected
-//     color: $seaGreen !important
-//     &:hover
-//         color: white !important
-
 .portfolio__list
     grid-column: 2 / 10
     grid-row: 6 / 7
@@ -40,7 +23,10 @@
     grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr))
     grid-gap: 30px
 
-    @media (max-width: 700px)
+    @media (max-width: 900px)
+        grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr))
+
+    @media (max-width: 500px)
         grid-template-columns: repeat(auto-fit, minmax(70vw, 1fr))
 
 .portfolio__show-all
