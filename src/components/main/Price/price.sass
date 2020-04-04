@@ -14,17 +14,37 @@
     grid-row: 2 / 3
 
 .price__content
-    background-color: transparent
     grid-column: 2 / 10
     grid-row: 4 / 5
-
     @include list 
 
     @include flex(space-evenly, center)
     flex-wrap: wrap
 
     @media (max-width: 500px)
-        grid-template-columns: repeat(auto-fit, minmax(70vw, 1fr))
+        width: max-content
+        margin-left: 0
+        transition: margin-left .5s ease-in-out
+
+.price__carousel
+    grid-column: 2 / 10
+    grid-row: 4 / 5
+    @media (max-width: 500px)
+        width: 80vw
+        overflow: hidden
+
+.price__caret
+    grid-row: 4 / 5
+    align-self: center
+    justify-self: center
+    font-size: 30px
+    color: #3949ab
+
+    @media (min-width: 500px)
+        display: none
+    
+.price__caret_hidden
+    visibility: hidden
 
 .price__item
     width: 30%

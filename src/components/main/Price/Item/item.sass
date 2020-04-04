@@ -2,21 +2,8 @@
 @import '../../../../sass/mixins'
 
 .tariff
-    // min-width: 350px
-
     &:nth-child(2)
         margin: 20px
-
-    // @media ( max-width: 900px )
-    //     // min-width: 280px
-    //     width: 40% !important
-        
-
-    @media (max-width: 500px)
-        min-width: 250px
-        // width: 100%
-        &:nth-child(2)
-            margin: 50px 0
 
     display: grid
     grid-template-columns: repeat(4, 1fr)
@@ -25,6 +12,13 @@
 
     @media (max-width: 900px)
         grid-template-rows: repeat(22, minmax(17px, max-content))
+
+    @media (max-width: 500px)
+        min-width: 78vw
+        max-width: 78vw
+        margin: 0 1vw
+        &:nth-child(n)
+            margin: 0 1vw
 
     background-color: white
     transition: .4s

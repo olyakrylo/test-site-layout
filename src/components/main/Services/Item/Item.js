@@ -6,7 +6,7 @@ import { faMobileAlt } from '@fortawesome/free-solid-svg-icons'
 export default class Item extends React.Component {
     render() {
         return (
-            <li className='infoblock'>
+            <li className='infoblock animated fadeIn'>
                 <div className='infoblock__icon'>
                     <FontAwesomeIcon icon={faMobileAlt} />
                 </div>
