@@ -19,43 +19,8 @@ export default class Team extends React.Component {
     }
 
     componentDidMount() {
-        // let { blocksAmount } = this.state;
         let carousel = document.querySelector('.team__carousel');
         carousel.addEventListener('touchstart', e => carouselScrolling.call(this, e, carousel));
-        // carousel.addEventListener('touchstart', e => {
-        //     carousel.style.transition = 'none';
-        //     let startX = e.changedTouches[0].clientX;
-        //     let margin = Math.abs(parseFloat(getComputedStyle(carousel).marginLeft));
-        //     let width = parseFloat(getComputedStyle(carousel).width);
-        //     let {currentBlock} = this.state
-
-        //     let touchMove = e => {
-        //         let x = e.changedTouches[0].clientX;
-        //         carousel.style.marginLeft = `${-margin + x - startX}px`;
-        //     }
-            
-        //     let checkPoints = [];
-        //     for (let i = 0; i < blocksAmount; ++i) {
-        //         checkPoints[i] = i * width / blocksAmount;
-        //     }
-        //     let max = checkPoints[blocksAmount - 1];
-
-        //     let touchEnd = e => {
-        //         let endX = e.changedTouches[0].clientX;
-        //         carousel.style.transition = 'margin-left .3s ease-out';
-        //         if (startX - endX > 40) {
-        //             carousel.style.marginLeft = `-${checkPoints[currentBlock + 1] || max}px`;
-        //             currentBlock = Math.min(currentBlock + 1, blocksAmount - 1);
-        //         } else if (endX - startX > 40) {
-        //             carousel.style.marginLeft = `-${checkPoints[currentBlock - 1] || 0}px`;
-        //             currentBlock = Math.max(currentBlock - 1, 0);
-        //         }
-        //         this.setBlock(currentBlock);
-        //         carousel.removeEventListener('touchend', touchEnd);
-        //     }
-        //     carousel.addEventListener('touchmove', touchMove);
-        //     carousel.addEventListener('touchend', touchEnd);
-        // })
     }
 
 

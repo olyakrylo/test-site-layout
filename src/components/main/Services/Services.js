@@ -82,12 +82,16 @@ function mouseDown(e, className, blocks) {
     invisibleBlock.style.height = getComputedStyle(block).height;
     invisibleBlock.style.margin = margin;
     block.before(invisibleBlock);
-    
+
     block.style.position = 'absolute';
     block.style.zIndex = 100;
     block.style.margin = 0;
     document.body.append(block);
     move(e.pageX, e.pageY);
+
+    for (let elem of blocks.children) {
+        elem.classList.replace('infoblock', 'infoblock_without-hover');
+    }
 
     document.addEventListener('mousemove', onMouseMove);
 
@@ -99,10 +103,10 @@ function mouseDown(e, className, blocks) {
     function onMouseMove (e) {
         move(e.pageX, e.pageY);
 
+        let centerX = block.getBoundingClientRect().left + block.getBoundingClientRect().width / 2;
+        let centerY = block.getBoundingClientRect().top + block.getBoundingClientRect().height / 2;
         for (let elem of blocks.children) {
             let coords = elem.getBoundingClientRect();
-            let centerX = block.getBoundingClientRect().left + block.getBoundingClientRect().width / 2;
-            let centerY = block.getBoundingClieНntRect().top + block.getBoundingClientRect().height / 2;
 
             if (elem !== invisibleBlock &&
                 centerX > coords.x && centerX < coords.x + coords.width &&
@@ -128,6 +132,9 @@ function mouseDown(e, className, blocks) {
         block.style.margin = margin;
         invisibleBlock.before(block);
         invisibleBlock.remove();
+        for (let elem of blocks.children) {
+            elem.classList.replace('infoblock_without-hover', 'infoblock');
+        }
         document.removeEventListener('mousemove', onMouseMove);
         block.removeEventListener('mouseup', up);
     })

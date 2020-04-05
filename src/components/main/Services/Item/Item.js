@@ -4,9 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMobileAlt } from '@fortawesome/free-solid-svg-icons'
 
 export default class Item extends React.Component {
+    removeHover (e) {
+        e.target.classList.replace('infoblock', 'infoblock_without-hover');
+    }
+
     render() {
         return (
-            <li className='infoblock animated fadeIn'>
+            <li className='infoblock animated fadeIn' onTouchStartCapture={this.removeHover}>
                 <div className='infoblock__icon'>
                     <FontAwesomeIcon icon={faMobileAlt} />
                 </div>

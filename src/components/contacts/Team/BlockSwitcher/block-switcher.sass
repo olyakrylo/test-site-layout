@@ -5,20 +5,17 @@
     grid-column: 2 / 10
     grid-row: 6 / 7
     @include flex(center, center)
-    // background-color: red
-
-    // svg
-    //     width: 100px !important
             
 
-.block-switcher__item
-    fill: $seaGreen
-    // width: 50px
+.block-switcher__item:hover
+    cursor: pointer
 
-    @media (min-width: 500px)
-        &:hover
-            cursor: pointer
-            fill: darken($seaGreen, 5)
+.block-switcher__circle
+    transition: cx 1s
+
+    @media ( max-width: 500px )
+        transition-duration: .5s
+        
 
 .block-switcher__item_active
     fill: #3949ab
