@@ -1,6 +1,6 @@
-import React from 'react'
-import Team from './Team/Team'
-import Feedback from './Feedback/Feedback'
+import React from 'react';
+import Team from './Team';
+import Feedback from './Feedback';
 
 export default class Contacts extends React.Component {
     componentDidMount() {

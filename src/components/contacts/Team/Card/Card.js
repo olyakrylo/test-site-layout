@@ -1,8 +1,8 @@
-import React from 'react'
-import '../../../../css/style.css'
-import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faComments, faBullseye } from '@fortawesome/free-solid-svg-icons'
-import SocialLink from '../../../lib/socialLink/SocialLink'
+import React from 'react';
+import '../../../../css/style.css';
+import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faComments, faBullseye } from '@fortawesome/free-solid-svg-icons';
+import SocialLink from '../../../lib/SocialLink';
 
 export default function Card(props) {
 

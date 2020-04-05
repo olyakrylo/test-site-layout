@@ -1,8 +1,8 @@
-import React from 'react'
-import '../../css/style.css'
-import ItemList from './ItemList/ItemList'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+import React from 'react';
+import '../../css/style.css';
+import ItemList from './ItemList';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 export default class Header extends React.Component {
 

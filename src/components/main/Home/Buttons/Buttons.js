@@ -1,7 +1,7 @@
-import React from 'react'
-import '../../../../css/style.css'
-import Popup from '../../../lib/popup/Popup'
-import Button from '../../../lib/button/Button'
+import React from 'react';
+import '../../../../css/style.css';
+import Popup from '../../../lib/Popup';
+import Button from '../../../lib/Button';
 
 export default class Buttons extends React.Component {
     state = {

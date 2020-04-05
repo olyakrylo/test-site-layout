@@ -1,11 +1,11 @@
-import React from 'react'
-import '../../css/style.css'
-import Home from './Home/Home'
-import About from './About/About'
-import Services from './Services/Services'
-import Portfolio from './Portfolio/Portfolio'
-import Price from './Price/Price'
-import Blog from './Blog/Blog'
+import React from 'react';
+import '../../css/style.css';
+import Home from './Home/';
+import About from './About';
+import Services from './Services';
+import Portfolio from './Portfolio';
+import Price from './Price';
+import Blog from './Blog';
 
 export default class Main extends React.PureComponent {
     componentDidMount() {

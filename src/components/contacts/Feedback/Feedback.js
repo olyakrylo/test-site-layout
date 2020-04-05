@@ -1,9 +1,9 @@
-import React from 'react'
-import '../../../css/style.css'
-import { faMapMarkerAlt, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import Title from '../../lib/title/Title'
-import Form from './Form/Form'
-import Item from './Item/Item'
+import React from 'react';
+import '../../../css/style.css';
+import { faMapMarkerAlt, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import Title from '../../lib/Title';
+import Form from './Form';
+import Item from './Item';
 
 export default class Feedback extends React.Component {
 

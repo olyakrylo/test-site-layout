@@ -1,17 +1,17 @@
 import React from 'react';
 
-import Header from './components/Header/Header'
-import Main from './components/main/Main'
-import Contacts from './components/contacts/Contacts'
-import Footer from './components/Footer/Footer'
-import './App.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import Header from './components/Header';
+import Main from './components/Main';
+import Contacts from './components/Contacts';
+import Footer from './components/Footer';
+import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 import {
   Route,
   Switch
-} from "react-router-dom"
+} from "react-router-dom";
 
 class App extends React.Component {
 

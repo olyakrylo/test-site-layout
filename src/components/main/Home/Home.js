@@ -1,8 +1,8 @@
-import React from 'react'
-import '../../../css/style.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
-import Buttons from './Buttons/Buttons'
+import React from 'react';
+import '../../../css/style.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import Buttons from './Buttons/Buttons';
 
 export default class Home extends React.Component {
     componentDidMount() {

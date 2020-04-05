@@ -1,16 +1,22 @@
-import React from 'react'
-import '../../../css/style.css'
-import Item from './Item/Item'
-import tariffs from './tariffs'
-import Title from '../../lib/title/Title'
+import React from 'react';
+import '../../../css/style.css';
+import Item from './Item';
+import tariffs from './tariffs';
 import { faCaretRight, faCaretLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Title from '../../lib/Title';
+import carouselScrolling from '../../lib/carouselScrolling';
 
 export default class Price extends React.Component {
     state = {
         blocksAmount: 3,
         currentBlock: 0
     };
+
+    componentDidMount() {
+        let carousel = document.querySelector('.price__content');
+        carousel.addEventListener('touchstart', e => carouselScrolling.call(this, e, carousel));
+    }
 
     * genPriceItems() {
         for (let tariff of tariffs.tariffs) {

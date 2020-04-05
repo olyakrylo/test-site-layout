@@ -1,6 +1,6 @@
-import React from 'react'
-import '../../../../css/style.css'
-import Popup from '../../../lib/popup/Popup'
+import React from 'react';
+import '../../../../css/style.css';
+import Popup from '../../../lib/Popup';
 
 export default class Form extends React.Component {
     state = {

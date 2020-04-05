@@ -1,7 +1,7 @@
-import React from 'react'
-import '../../../../css/style.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarAlt, faFile } from '@fortawesome/free-regular-svg-icons'
+import React from 'react';
+import '../../../../css/style.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarAlt, faFile } from '@fortawesome/free-regular-svg-icons';
 
 export default function Item(props) {
     return (

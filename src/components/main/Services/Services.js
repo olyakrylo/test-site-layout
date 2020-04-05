@@ -1,9 +1,10 @@
-import React from 'react'
-import '../../../css/style.css'
-import Item from './Item/Item'
-import Title from '../../lib/title/Title'
+import React from 'react';
+import '../../../css/style.css';
+import Item from './Item';
+import Title from '../../lib/Title';
 import { faCaretRight, faCaretLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import carouselScrolling from '../../lib/carouselScrolling';
 
 export default class Services extends React.Component {
     state = {
@@ -16,6 +17,9 @@ export default class Services extends React.Component {
 
         let blocks = document.querySelector('.services__content');
         blocks.addEventListener('mousedown', (e) => mouseDown(e, 'infoblock', blocks));
+
+        let carousel = document.querySelector('.services__content');
+        carousel.addEventListener('touchstart', (e) => carouselScrolling.call(this, e, carousel));
     }
 
     componentWillUnmount() {
@@ -94,23 +98,25 @@ function mouseDown(e, className, blocks) {
 
     function onMouseMove (e) {
         move(e.pageX, e.pageY);
+
         for (let elem of blocks.children) {
             let coords = elem.getBoundingClientRect();
             let centerX = block.getBoundingClientRect().left + block.getBoundingClientRect().width / 2;
-            let centerY = block.getBoundingClientRect().top + block.getBoundingClientRect().height / 2;
+            let centerY = block.getBoundingClieНntRect().top + block.getBoundingClientRect().height / 2;
+
             if (elem !== invisibleBlock &&
                 centerX > coords.x && centerX < coords.x + coords.width &&
                 centerY > coords.y && centerY < coords.y + coords.height) {
                     let childrenArr = Array.from(blocks.children);
                     let invisibleIndex = childrenArr.findIndex(x => x === invisibleBlock);
                     let elemIndex = childrenArr.findIndex(x => x === elem);
+
                     if (invisibleIndex < elemIndex) {
                         elem.after(invisibleBlock);
                     } else {
                         elem.before(invisibleBlock);
                     }
-                    
-                }
+            }
         }
     }
 

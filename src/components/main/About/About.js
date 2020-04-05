@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../../css/style.css'
-import Item from './Item/Item'
-import Title from '../../lib/title/Title'
+import Item from './Item'
+import Title from '../../lib/Title'
 import { faGlobe, faUsers, faUserCog } from '@fortawesome/free-solid-svg-icons'
 
 export default class About extends React.Component {

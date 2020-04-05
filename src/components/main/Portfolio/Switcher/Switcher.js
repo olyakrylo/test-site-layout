@@ -1,6 +1,6 @@
-import React from 'react'
-import '../../../../css/style.css'
-import Button from '../../../lib/button/Button'
+import React from 'react';
+import '../../../../css/style.css';
+import Button from '../../../lib/Button';
 
 export default function Switcher() {
 

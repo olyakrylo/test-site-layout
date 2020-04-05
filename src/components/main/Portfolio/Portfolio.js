@@ -1,10 +1,10 @@
-import React from 'react'
-import '../../../css/style.css'
-import Item from './Item/Item'
-import Switcher from './Switcher/Switcher'
-import portfolioInfo from './portfolioInfo'
-import Title from '../../lib/title/Title'
-import Button from '../../lib/button/Button'
+import React from 'react';
+import '../../../css/style.css';
+import Item from './Item';
+import Switcher from './Switcher';
+import portfolioInfo from './portfolioInfo';
+import Title from '../../lib/Title';
+import Button from '../../lib/Button';
 
 export default class Portfolio extends React.Component {
     componentDidMount() {
